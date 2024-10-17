@@ -1,0 +1,252 @@
+/* Reset de margem e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo principal com gradiente verde e preto */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #00ff00, #000);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+/* Estilos gerais para formulários de login e cadastro */
+.login-container,
+.container,
+.tela-inicial-container {
+    text-align: center;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    border-radius: 10px;
+    width: 320px;
+    margin-bottom: 20px;
+}
+
+h2, h3 {
+    color: white;
+    margin: 10px 0;
+}
+
+/* Logo centralizada e circular */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.logo-circular, .logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Botões principais */
+button, .botao-iniciar, .botao-configuracoes, input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #00ff00;
+    border: none;
+    color: #000;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+button:hover, .botao-iniciar:hover, .botao-configuracoes:hover, input[type="submit"]:hover {
+    background-color: #007700;
+}
+
+/* Links e hover para links */
+a, .recuperar-senha, .cadastre-se {
+    color: #00ff00;
+    text-decoration: none;
+}
+
+a:hover, .recuperar-senha:hover, .cadastre-se:hover {
+    text-decoration: underline;
+}
+
+/* Inputs de formulários */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: black; /* Cor do texto preta */
+}
+
+/* Placeholder com texto preto */
+input::placeholder {
+    color: black;
+}
+
+/* Página Inicial (Iniciar e Configurações) */
+.tela-inicial-container h1 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.botao-iniciar, .botao-configuracoes {
+    width: 200px;
+    padding: 10px;
+    margin: 10px;
+}
+
+/* Carrossel para a página de jogos */
+.carrossel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.carrossel-inner {
+    display: flex;
+    transition: transform 0.3s ease;
+    width: 100%;
+    overflow: hidden;
+}
+
+.jogo {
+    min-width: 200px;
+    margin: 0 10px;
+}
+
+.jogo img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Setas do carrossel */
+.seta {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.seta.esquerda {
+    left: 10px;
+}
+
+.seta.direita {
+    right: 10px;
+}
+
+/* Canais de transmissão */
+.canais {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.canais img {
+    width: 100px;
+}
+
+/* Ajuste do body para reduzir o efeito do gradiente */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #00ff00, #000);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Para criar o efeito do gradiente apenas nos cantos */
+}
+
+/* Aumentando o tamanho do contêiner */
+.container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo preto com opacidade */
+    padding: 40px; /* Aumentando o preenchimento interno */
+    border-radius: 10px;
+    width: 80%; /* Aumentando a largura do contêiner */
+    max-width: 1200px; /* Limitando a largura máxima */
+    margin: 0 auto; /* Centralizando o contêiner */
+}
+
+.carrossel {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%; /* Ajuste de largura */
+    margin: 0 auto; /* Centralizar o carrossel */
+    margin-bottom: 20px;
+}
+
+.carrossel-inner {
+    display: flex;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    width: 100%;
+}
+
+.jogo {
+    min-width: 200px;
+    margin: 0 10px;
+}
+
+.jogo img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.seta {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 50%; /* Centralizar verticalmente */
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.seta.esquerda {
+    left: 0px; /* Colocar a seta para fora do contêiner à esquerda */
+}
+
+.seta.direita {
+    right: 550px; /* Colocar a seta para fora do contêiner à direita */
+}
+
+.seta:hover {
+    color: #00ff00;
+}
+
+
+/* Ajuste da seção dos canais de transmissão */
+.canais {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.canais img {
+    width: 100px;
+}
