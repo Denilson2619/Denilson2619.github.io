@@ -39,3 +39,4 @@ document.getElementById('prevChampions').addEventListener('click', function () {
     scrollPosChampions += 200;  // Ajuste o valor conforme necessário
     carrosselChampions.style.transform = `translateX(${scrollPosChampions}px)`;
 });
+
