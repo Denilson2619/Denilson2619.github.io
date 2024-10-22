@@ -95,6 +95,7 @@ h2, h3 {
     margin: 5px; /* Espaçamento entre os logos */
 }
 
+<<<<<<< HEAD
 /* Adicione aqui o CSS do menu */
 .menu-icon {
     width: 75px;
@@ -152,3 +153,6 @@ h2, h3 {
 .menu.active {
     display: block; /* Mostra o menu quando a classe 'active' é adicionada */
 }
+=======
+
+>>>>>>> b34da5e259230fd3058906f8aa5bf4fdf5e2db87

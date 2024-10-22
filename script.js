@@ -37,6 +37,7 @@ prevBrasileirao.addEventListener('click', () => {
 
 showOrHideSetas();
 
+<<<<<<< HEAD
 document.querySelector('.menu-icon').addEventListener('click', function() {
     const menu = document.querySelector('.menu');
     menu.classList.toggle('active');
@@ -52,3 +53,6 @@ function toggleMenu() {
         sidebar.style.display = "block";
     }
 }
+=======
+
+>>>>>>> b34da5e259230fd3058906f8aa5bf4fdf5e2db87
