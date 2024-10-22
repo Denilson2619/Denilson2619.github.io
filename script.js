@@ -1,40 +1,38 @@
-const carrosselBrasileirao = document.getElementById('carrosselBrasileirao');
-const prevBrasileirao = document.getElementById('prevBrasileirao');
-const nextBrasileirao = document.getElementById('nextBrasileirao');
-let currentSlide = 0;
+document.querySelectorAll('.carrossel-container').forEach(container => {
+    const carrossel = container.querySelector('.carrossel');
+    const jogos = carrossel.children.length;
+    let index = 0;
 
-function showOrHideSetas() {
-    // Verifica se a seta esquerda deve estar visível
-    if (currentSlide === 0) {
-        prevBrasileirao.classList.add('inativa');
-    } else {
-        prevBrasileirao.classList.remove('inativa');
-    }
+    container.querySelector('.seta.direita').addEventListener('click', () => {
+        index = (index + 1) % jogos; // Incrementa o índice
+        carrossel.style.transform = `translateX(${-index * (100 / jogos)}%)`; // Move o carrossel para a esquerda
+    });
 
-    // Verifica se a seta direita deve estar visível
-    if (currentSlide >= carrosselBrasileirao.children.length - 5) {
-        nextBrasileirao.classList.add('inativa');
-    } else {
-        nextBrasileirao.classList.remove('inativa');
-    }
-}
-
-nextBrasileirao.addEventListener('click', () => {
-    if (currentSlide < carrosselBrasileirao.children.length - 5) {
-        currentSlide++;
-        carrosselBrasileirao.style.transform = `translateX(-${currentSlide * 20}%)`;
-        showOrHideSetas();
-    }
+    container.querySelector('.seta.esquerda').addEventListener('click', () => {
+        index = (index - 1 + jogos) % jogos; // Decrementa o índice
+        carrossel.style.transform = `translateX(${-index * (100 / jogos)}%)`; // Move o carrossel para a direita
+    });
 });
 
-prevBrasileirao.addEventListener('click', () => {
-    if (currentSlide > 0) {
-        currentSlide--;
-        carrosselBrasileirao.style.transform = `translateX(-${currentSlide * 20}%)`;
-        showOrHideSetas();
+document.getElementById('mostrarClassificacao').addEventListener('click', () => {
+    const campeonato = document.getElementById('campeonatos').value;
+    const imgTabela = document.getElementById('tabelaImagem');
+
+    // Mapeamento de campeonatos para suas respectivas imagens
+    const imagens = {
+        'brasileirao': 'img/brasileiro.png',
+        'champions': 'img/champions.png', // Coloque o caminho correto da imagem da Champions
+        'arabia': 'img/arabia.png' // Coloque o caminho correto da imagem da Arábia Saudita
+    };
+
+    // Verifica se o campeonato selecionado tem uma imagem
+    if (imagens[campeonato]) {
+        imgTabela.src = imagens[campeonato]; // Define o src da imagem
+        imgTabela.style.display = 'block'; // Exibe a imagem
+    } else {
+        imgTabela.src = ''; // Limpa o src se não houver seleção
+        imgTabela.style.display = 'none'; // Oculta a imagem
     }
 });
-
-showOrHideSetas();
 
 

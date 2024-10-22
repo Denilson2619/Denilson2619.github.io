@@ -35,8 +35,8 @@ h2, h3 {
 .logo {
     width: 150px;
     height: 150px;
-    border-radius: 50%; /* Faz a imagem ser circular */
-    object-fit: cover;  /* Ajusta a imagem dentro do espaço circular */
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 /* Estilo dos carrosséis */
@@ -52,7 +52,7 @@ h2, h3 {
 }
 
 .jogo {
-    min-width: 20%;
+    min-width: 20%; /* Ajuste este valor para o número de jogos visíveis */
     display: flex;
     justify-content: center;
 }
@@ -73,26 +73,227 @@ h2, h3 {
     cursor: pointer;
     padding: 10px;
     border-radius: 5px;
+    z-index: 10;
+    font-size: 30px; /* Aumenta o tamanho da seta */
 }
 
 .seta.esquerda {
-    left: -40px; /* Setas posicionadas antes do primeiro jogo */
+    left: 10px; /* Ajuste conforme necessário */
 }
 
 .seta.direita {
-    right: -40px; /* Setas posicionadas depois do último jogo */
+    right: 10px; /* Ajuste conforme necessário */
 }
 
 /* Estilo dos canais */
 .canais {
     display: flex;
-    justify-content: center; /* Centraliza os canais */
-    flex-wrap: wrap; /* Permite que os canais se organizem em várias linhas se necessário */
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .canais img {
-    width: 80px; /* Ajusta a largura dos logos dos canais */
-    margin: 5px; /* Espaçamento entre os logos */
+    width: 80px;
+    margin: 5px;
 }
+
+/* Estilos da tabela de classificação */
+.tabela-container {
+    margin-top: 20px;
+}
+
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela th, .tabela td {
+    padding: 10px;
+    border: 1px solid #ffffff;
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.tabela th {
+    background-color: #00ff00;
+    color: #000;
+}
+
+/* Estilos responsivos para a tabela */
+@media (max-width: 768px) {
+    .tabela th, .tabela td {
+        padding: 8px; /* Reduz o padding em telas menores */
+    }
+
+    .seta {
+        font-size: 24px; /* Reduz o tamanho da seta em telas menores */
+    }
+}
+
+/* Adicione aqui o CSS do menu */
+.menu-icon {
+    width: 75px;
+    height: 75px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 1000;
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #575757;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 36px;
+}
+
+.menu {
+    display: none; /* Escondido por padrão */
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 200px;
+    background-color: #333;
+    /* Outros estilos de menu */
+}
+
+.menu.active {
+    display: block; /* Mostra o menu quando a classe 'active' é adicionada */
+}
+
+/* Estilos para a imagem da tabela de classificação */
+#tabelaImagem {
+    display: block; /* Certifica que a imagem é um bloco */
+    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+    max-width: 100%; /* Mantém a responsividade */
+}
+
+
+
+/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #0c0, #000);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #0f0;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+}
+
+
+.user-profile img {
+    height: 50px;
+    border-radius: 50%;
+}
+
+/* Seção de Resultados */
+.resultados {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.resultados h1 {
+    font-size: 10px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.resultados p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Tabela de Resultados */
+.tabela-resultados {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.coluna {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.jogo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 255, 0, 0.2);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.jogo p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.jogo img {
+    height: 50px;
+    width: 50px;
+}
+
+
 
 
