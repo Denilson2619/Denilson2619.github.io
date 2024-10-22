@@ -36,3 +36,5 @@ prevBrasileirao.addEventListener('click', () => {
 });
 
 showOrHideSetas();
+
+
