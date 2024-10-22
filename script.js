@@ -34,3 +34,4 @@ document.getElementById('mostrarClassificacao').addEventListener('click', () => 
         imgTabela.style.display = 'none'; // Oculta a imagem
     }
 });
+
