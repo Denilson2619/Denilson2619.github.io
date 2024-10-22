@@ -35,4 +35,24 @@ document.getElementById('mostrarClassificacao').addEventListener('click', () => 
     }
 });
 
+document.getElementById('mostrarClassificacao').addEventListener('click', () => {
+    const campeonato = document.getElementById('campeonatos').value;
+    const imgTabela = document.getElementById('tabelaImagem');
+
+    // Mapeamento de campeonatos para suas respectivas imagens
+    const imagens = {
+        'brasileirao': 'img/brasileiro.png',
+        'champions': 'img/champions.png', // Coloque o caminho correto da imagem da Champions
+        'arabia': 'img/arabia.png' // Coloque o caminho correto da imagem da Arábia Saudita
+    };
+
+    // Verifica se o campeonato selecionado tem uma imagem
+    if (imagens[campeonato]) {
+        imgTabela.src = imagens[campeonato]; // Define o src da imagem
+        imgTabela.style.display = 'block'; // Exibe a imagem
+    } else {
+        imgTabela.src = ''; // Limpa o src se não houver seleção
+        imgTabela.style.display = 'none'; // Oculta a imagem
+    }
+});
 
