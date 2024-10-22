@@ -35,8 +35,8 @@ h2, h3 {
 .logo {
     width: 150px;
     height: 150px;
-    border-radius: 50%; /* Faz a imagem ser circular */
-    object-fit: cover;  /* Ajusta a imagem dentro do espaço circular */
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 /* Estilo dos carrosséis */
@@ -52,7 +52,7 @@ h2, h3 {
 }
 
 .jogo {
-    min-width: 20%;
+    min-width: 20%; /* Ajuste este valor para o número de jogos visíveis */
     display: flex;
     justify-content: center;
 }
@@ -73,24 +73,65 @@ h2, h3 {
     cursor: pointer;
     padding: 10px;
     border-radius: 5px;
+    z-index: 10;
+    font-size: 30px; /* Aumenta o tamanho da seta */
 }
 
 .seta.esquerda {
-    left: -40px; /* Setas posicionadas antes do primeiro jogo */
+    left: 10px; /* Ajuste conforme necessário */
 }
 
 .seta.direita {
-    right: -40px; /* Setas posicionadas depois do último jogo */
+    right: 10px; /* Ajuste conforme necessário */
 }
 
 /* Estilo dos canais */
 .canais {
     display: flex;
-    justify-content: center; /* Centraliza os canais */
-    flex-wrap: wrap; /* Permite que os canais se organizem em várias linhas se necessário */
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .canais img {
-    width: 80px; /* Ajusta a largura dos logos dos canais */
-    margin: 5px; /* Espaçamento entre os logos */
+    width: 80px;
+    margin: 5px;
+}
+
+/* Estilos da tabela de classificação */
+.tabela-container {
+    margin-top: 20px;
+}
+
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela th, .tabela td {
+    padding: 10px;
+    border: 1px solid #ffffff;
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.tabela th {
+    background-color: #00ff00;
+    color: #000;
+}
+
+/* Estilos responsivos para a tabela */
+@media (max-width: 768px) {
+    .tabela th, .tabela td {
+        padding: 8px; /* Reduz o padding em telas menores */
+    }
+
+    .seta {
+        font-size: 24px; /* Reduz o tamanho da seta em telas menores */
+    }
+}
+
+/* Estilos para a imagem da tabela de classificação */
+#tabelaImagem {
+    display: block; /* Certifica que a imagem é um bloco */
+    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+    max-width: 100%; /* Mantém a responsividade */
 }
