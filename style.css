@@ -11,186 +11,86 @@ body {
     background: linear-gradient(to bottom, #00ff00, #000);
     height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    
-
 }
 
-/* Estilos gerais para formulários de login e cadastro */
-.login-container,
-.container,
-.tela-inicial-container {
+/* Estilos gerais para os containers */
+.container {
     text-align: center;
     padding: 40px;
     background-color: rgba(0, 0, 0, 0.8);
     color: #ffffff;
     border-radius: 10px;
-    width: 320px;
-    margin-bottom: 20px;
+    width: 100%;
+    max-width: 1200px;
 }
 
 h2, h3 {
     color: white;
     margin: 10px 0;
-    
 }
 
 /* Logo centralizada e circular */
-.logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 40px;
-}
-
-.logo-circular, .logo {
+.logo {
     width: 150px;
     height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
+    border-radius: 50%; /* Faz a imagem ser circular */
+    object-fit: cover;  /* Ajusta a imagem dentro do espaço circular */
 }
 
-/* Botões principais */
-button, .botao-iniciar, .botao-configuracoes, input[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background-color: #00ff00;
-    border: none;
-    color: #000;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 10px;
-}
-
-button:hover, .botao-iniciar:hover, .botao-configuracoes:hover, input[type="submit"]:hover {
-    background-color: #007700;
-}
-
-/* Links e hover para links */
-a, .recuperar-senha, .cadastre-se {
-    color: #00ff00;
-    text-decoration: none;
-}
-
-a:hover, .recuperar-senha:hover, .cadastre-se:hover {
-    text-decoration: underline;
-}
-
-/* Inputs de formulários */
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.2);
-    color: black; /* Cor do texto preta */
-}
-
-/* Placeholder com texto preto */
-input::placeholder {
-    color: black;
-}
-
-/* Página Inicial (Iniciar e Configurações) */
-.tela-inicial-container h1 {
-    color: white;
-    margin-bottom: 20px;
-}
-
-.botao-iniciar, .botao-configuracoes {
-    width: 200px;
-    padding: 10px;
-    margin: 10px;
-}
-
-/* Carrossel para a página de jogos */
-.carrossel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Estilo dos carrosséis */
+.carrossel-container {
     position: relative;
-    margin-bottom: 20px;
-}
-
-.carrossel-inner {
-    display: flex;
-    transition: transform 0.3s ease;
     width: 100%;
     overflow: hidden;
 }
 
+.carrossel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
 .jogo {
-    min-width: 200px;
-    margin: 0 10px;
+    min-width: 20%;
+    display: flex;
+    justify-content: center;
 }
 
 .jogo img {
     width: 100%;
-    border-radius: 5px;
+    max-width: 150px;
+    height: auto;
 }
 
-/* Setas do carrossel */
+/* Botões de seta */
 .seta {
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: 30px;
-    cursor: pointer;
-    padding: 10px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .seta.esquerda {
-    left: 10px;
+    left: -40px; /* Setas posicionadas antes do primeiro jogo */
 }
 
 .seta.direita {
-    right: 10px;
+    right: -40px; /* Setas posicionadas depois do último jogo */
 }
 
-.seta:hover {
-    color: #00ff00;
-}
-
-/* Canais de transmissão */
+/* Estilo dos canais */
 .canais {
     display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+    justify-content: center; /* Centraliza os canais */
+    flex-wrap: wrap; /* Permite que os canais se organizem em várias linhas se necessário */
 }
 
 .canais img {
-    width: 100px;
+    width: 80px; /* Ajusta a largura dos logos dos canais */
+    margin: 5px; /* Espaçamento entre os logos */
 }
-
-/* Estilos para o menu */
-.menu {
-    background-color: #000; /* Cor de fundo do menu */
-    padding: 10px;
-    text-align: center;
-    position: sticky; /* Fica fixo no topo ao rolar */
-    top: 0;
-    z-index: 1000; /* Fica acima de outros elementos */
-}
-
-.menu a {
-    color: #00ff00; /* Cor do texto dos links */
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-}
-
-.menu a:hover {
-    text-decoration: underline; /* Efeito de hover */
-}
-
