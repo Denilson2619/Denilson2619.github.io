@@ -36,3 +36,19 @@ prevBrasileirao.addEventListener('click', () => {
 });
 
 showOrHideSetas();
+
+document.querySelector('.menu-icon').addEventListener('click', function() {
+    const menu = document.querySelector('.menu');
+    menu.classList.toggle('active');
+});
+
+function toggleMenu() {
+    const sidebar = document.getElementById("sidebarMenu");
+    if (sidebar.style.width === "250px") {
+        sidebar.style.width = "0";
+        sidebar.style.display = "none";
+    } else {
+        sidebar.style.width = "250px";
+        sidebar.style.display = "block";
+    }
+}
