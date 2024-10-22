@@ -1,42 +1,38 @@
-// Função para o carrossel do Brasileirão
 const carrosselBrasileirao = document.getElementById('carrosselBrasileirao');
-let scrollPosBrasileirao = 0;
+const prevBrasileirao = document.getElementById('prevBrasileirao');
+const nextBrasileirao = document.getElementById('nextBrasileirao');
+let currentSlide = 0;
 
-document.getElementById('nextBrasileirao').addEventListener('click', function () {
-    scrollPosBrasileirao -= 200;  // Ajuste o valor conforme necessário
-    carrosselBrasileirao.style.transform = `translateX(${scrollPosBrasileirao}px)`;
+function showOrHideSetas() {
+    // Verifica se a seta esquerda deve estar visível
+    if (currentSlide === 0) {
+        prevBrasileirao.classList.add('inativa');
+    } else {
+        prevBrasileirao.classList.remove('inativa');
+    }
+
+    // Verifica se a seta direita deve estar visível
+    if (currentSlide >= carrosselBrasileirao.children.length - 5) {
+        nextBrasileirao.classList.add('inativa');
+    } else {
+        nextBrasileirao.classList.remove('inativa');
+    }
+}
+
+nextBrasileirao.addEventListener('click', () => {
+    if (currentSlide < carrosselBrasileirao.children.length - 5) {
+        currentSlide++;
+        carrosselBrasileirao.style.transform = `translateX(-${currentSlide * 20}%)`;
+        showOrHideSetas();
+    }
 });
 
-document.getElementById('prevBrasileirao').addEventListener('click', function () {
-    scrollPosBrasileirao += 200;  // Ajuste o valor conforme necessário
-    carrosselBrasileirao.style.transform = `translateX(${scrollPosBrasileirao}px)`;
+prevBrasileirao.addEventListener('click', () => {
+    if (currentSlide > 0) {
+        currentSlide--;
+        carrosselBrasileirao.style.transform = `translateX(-${currentSlide * 20}%)`;
+        showOrHideSetas();
+    }
 });
 
-// Função para o carrossel da Arábia Saudita
-const carrosselArabiaSaudita = document.getElementById('carrosselArabiaSaudita');
-let scrollPosArabiaSaudita = 0;
-
-document.getElementById('nextArabiaSaudita').addEventListener('click', function () {
-    scrollPosArabiaSaudita -= 200;  // Ajuste o valor conforme necessário
-    carrosselArabiaSaudita.style.transform = `translateX(${scrollPosArabiaSaudita}px)`;
-});
-
-document.getElementById('prevArabiaSaudita').addEventListener('click', function () {
-    scrollPosArabiaSaudita += 200;  // Ajuste o valor conforme necessário
-    carrosselArabiaSaudita.style.transform = `translateX(${scrollPosArabiaSaudita}px)`;
-});
-
-// Função para o carrossel da Champions
-const carrosselChampions = document.getElementById('carrosselChampions');
-let scrollPosChampions = 0;
-
-document.getElementById('nextChampions').addEventListener('click', function () {
-    scrollPosChampions -= 200;  // Ajuste o valor conforme necessário
-    carrosselChampions.style.transform = `translateX(${scrollPosChampions}px)`;
-});
-
-document.getElementById('prevChampions').addEventListener('click', function () {
-    scrollPosChampions += 200;  // Ajuste o valor conforme necessário
-    carrosselChampions.style.transform = `translateX(${scrollPosChampions}px)`;
-});
-
+showOrHideSetas();
