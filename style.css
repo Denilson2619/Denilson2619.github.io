@@ -323,5 +323,54 @@ header {
 }
 
 
+/*Transmisssao 
 
+/* Estilizando o container do menu e perfil */
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent; /* Fundo transparente ou cor de fundo desejada */
+    z-index: 10;
+}
 
+.menu-icon {
+    cursor: pointer;
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+.profile-icon {
+    cursor: pointer;
+    font-size: 24px;
+    position: fixed;
+    right: 20px; /* Mantém o ícone no canto direito */
+    top: 10px;   /* Mantém o ícone no topo */
+}
+
+.menu {
+    display: none; /* O menu começa oculto */
+    background-color: #fff;
+    position: absolute;
+    top: 40px;
+    left: 10px;
+    width: 150px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para o menu suspenso */
+    border-radius: 5px;
+}
+
+.menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.menu a:hover {
+    background-color: #f1f1f1;
+}

@@ -82,4 +82,18 @@ function salvarTimeFavorito() {
     }
 }
 
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('active');
+}
+
+
+function toggleMenu() {
+    var menu = document.getElementById("menu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+
+function goToProfile() {
+    window.location.href = "configuracao.html";
+}
 
