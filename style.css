@@ -32,7 +32,7 @@ h2, h3 {
 }
 
 /* Logo centralizada e circular */
-.logo {
+.logo { 
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -236,7 +236,7 @@ body {
 
 .container {
     text-align: center;
-    padding: 40px;
+    padding: 90px;
     border-radius: 10px;
     width: 100%;
     max-width: 1200px;
@@ -248,7 +248,7 @@ header {
     justify-content: center; /* Centraliza o conteúdo do cabeçalho */
     align-items: center;
     padding: 15px;
-    background-color: #0f0;
+    
 }
 
 .logo img {
