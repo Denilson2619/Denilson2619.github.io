@@ -6,34 +6,7 @@
     <title>Perfil do Usuário</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .menu {
-            display: none; /* Inicialmente, o menu está oculto */
-            position: absolute;
-            top: 50px; /* Distância do topo */
-            left: 10px; /* Distância da esquerda */
-            background-color: white; /* Cor de fundo do menu */
-            border: 1px solid #ccc; /* Borda do menu */
-            z-index: 10; /* Para garantir que o menu fique acima de outros elementos */
-        }
-
-        .menu a {
-            display: block; /* Cada link ocupa uma linha */
-            padding: 10px; /* Espaçamento interno */
-            text-decoration: none; /* Remove o sublinhado dos links */
-            color: black; /* Cor do texto */
-        }
-
-        .menu a:hover {
-            background-color: #f0f0f0; /* Cor de fundo ao passar o mouse */
-        }
-
-        .menu-icon {
-            position: absolute;
-            top: 10px; /* Distância do topo */
-            left: 10px; /* Distância da esquerda */
-            cursor: pointer; /* Muda o cursor ao passar o mouse */
-            font-size: 24px; /* Tamanho do ícone */
-        }
+        
     </style>
 </head>
 <body>
@@ -63,6 +36,23 @@
                 <option value="santos">Santos</option>
                 <option value="corinthians">Corinthians</option>
                 <option value="saopaulo">São Paulo</option>
+                <option value="vasco">Vasco</option>
+                <option value="juventude">Juventude</option>
+                <option value="Atlético Mineiro">Atlético Mineiro</option>
+                <option value="Atlético Goianiense">Atlético Goianiense</option>
+                <option value="Cuiabá">Cuiabá</option>
+                <option value="fluminense">Fluminense</option>
+                <option value="criciuma">Criciuma</option>
+                <option value="vitoria">Vitoria</option>
+                <option value="bahia">Bahia</option>
+                <option value="fortaleza">Fortaleza</option>
+                <option value="athletico paranaense">Athletico Paranaense</option>
+                <option value="botafogo">Botafogo</option>
+                <option value="gremio">Gremio</option>
+                <option value="bragantino">Bragantino</option>
+                <option value="cruzeiro">Cruzeiro</option>
+                <option value="internacional">Internacional</option>
+                
             </select>
         </div>
 
@@ -71,21 +61,8 @@
         </div>
     </div>
 
-    <script>
-        // Recuperar e exibir informações do localStorage
-        document.getElementById('userEmail').textContent = localStorage.getItem('email') || 'N/A';
-        document.getElementById('userName').textContent = 'Nome do Usuário'; // Altere para pegar o nome se você armazená-lo
-
-        function salvarTimeFavorito() {
-            const timeFavorito = document.getElementById('timeFavorito').value;
-            localStorage.setItem('timeFavorito', timeFavorito);
-            alert('Time favorito salvo: ' + timeFavorito);
-        }
-
-        function toggleMenu() {
-            const menu = document.getElementById('menu');
-            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block'; // Alterna a exibição do menu
-        }
-    </script>
+    
+       <script src="script.js"></script>
+    
 </body>
 </html>

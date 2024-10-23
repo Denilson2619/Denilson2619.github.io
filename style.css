@@ -100,11 +100,13 @@ h2, h3 {
 /* Estilos da tabela de classificação */
 .tabela-container {
     margin-top: 20px;
+    
 }
 
 .tabela {
     width: 100%;
     border-collapse: collapse;
+    
 }
 
 .tabela th, .tabela td {
@@ -139,7 +141,6 @@ h2, h3 {
     border: 1px solid #ccc; /* Borda do menu */
     z-index: 10; /* Para garantir que o menu fique acima de outros elementos */
     width: 200px;
-    background-color: #333;
     /* Outros estilos de menu */
 }
 
@@ -221,51 +222,41 @@ h2, h3 {
     padding: 0;
     box-sizing: border-box;
 }
-
-/* Corpo principal com gradiente verde e preto */
+/* logo tela de resultado */
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #00ff00, #000);
-    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #0c0, #000);
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-/* Estilos gerais para os containers */
 .container {
     text-align: center;
     padding: 40px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #ffffff;
     border-radius: 10px;
     width: 100%;
     max-width: 1200px;
 }
 
-h2, h3 {
-    color: white;
-    margin: 10px 0;
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo do cabeçalho */
+    align-items: center;
+    padding: 15px;
+    background-color: #0f0;
 }
 
-/* Logo centralizada e circular */
-.logo {
+.logo img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
 }
-
-
-/* Cabeçalho */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #0f0;
-}
-
 
 
 .menu-icon {
@@ -303,7 +294,7 @@ header {
 .tabela-resultados {
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 40px;
 }
 
 .coluna {
@@ -312,7 +303,7 @@ header {
     gap: 20px;
 }
 
-.jogo {
+.game {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -321,12 +312,12 @@ header {
     border-radius: 10px;
 }
 
-.jogo p {
+.game p {
     font-size: 24px;
     font-weight: bold;
 }
 
-.jogo img {
+.game img {
     height: 50px;
     width: 50px;
 }

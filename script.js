@@ -68,3 +68,18 @@ function redirecionar(url) {
     window.location.href = url; // Redireciona para a URL
 }
 
+function salvarTimeFavorito() {
+    // Captura o valor selecionado no dropdown
+    var timeFavorito = document.getElementById('timeFavorito').value;
+
+    // Verifica se o usuário selecionou um time
+    if (timeFavorito) {
+        // Exibe uma mensagem personalizada com o nome do time
+        alert('Seu time favorito é: ' + timeFavorito.charAt(0).toUpperCase() + timeFavorito.slice(1));
+    } else {
+        // Caso não tenha selecionado, avisa o usuário
+        alert('Por favor, selecione um time favorito.');
+    }
+}
+
+
