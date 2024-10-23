@@ -56,3 +56,15 @@ document.getElementById('mostrarClassificacao').addEventListener('click', () => 
     }
 });
 
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block'; // Alterna a exibição do menu
+}
+
+// Nova função para redirecionar e fechar o menu
+function redirecionar(url) {
+    const menu = document.getElementById('menu');
+    menu.style.display = 'none'; // Fecha o menu ao clicar
+    window.location.href = url; // Redireciona para a URL
+}
+

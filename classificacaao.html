@@ -5,79 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Classificação dos Campeonatos</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .menu {
-            display: none; /* Inicialmente, o menu está oculto */
-            position: absolute;
-            top: 50px; /* Distância do topo */
-            left: 10px; /* Distância da esquerda */
-            background-color: white; /* Cor de fundo do menu */
-            border: 1px solid #ccc; /* Borda do menu */
-            z-index: 10; /* Para garantir que o menu fique acima de outros elementos */
-        }
-
-        .menu a {
-            display: block; /* Cada link ocupa uma linha */
-            padding: 10px; /* Espaçamento interno */
-            text-decoration: none; /* Remove o sublinhado dos links */
-            color: black; /* Cor do texto */
-        }
-
-        .menu a:hover {
-            background-color: #f0f0f0; /* Cor de fundo ao passar o mouse */
-        }
-
-        .menu-icon {
-            position: absolute;
-            top: 10px; /* Distância do topo */
-            left: 10px; /* Distância da esquerda */
-            cursor: pointer; /* Muda o cursor ao passar o mouse */
-            font-size: 24px; /* Tamanho do ícone */
-        }
-    </style>
 </head>
 <body>
-    <div class="menu-icon" onclick="toggleMenu()">&#x22EE;</div> <!-- Três pontinhos -->
+        <div class="menu-icon" onclick="toggleMenu()">&#x22EE;</div> <!-- Três pontinhos -->
+    
+        <div class="menu" id="menu">
+            <a href="iniciar.html">Jogos</a>
+            <a href="transmissao.html">Transmissão</a>
+            <a href="resultados.html">Resultados</a>
+            <a href="configuracao.html">Configuração</a>
+        </div>
+    
+        <div class="container">
+            <div class="header">
+                <h2>Classificação dos Campeonatos</h2>
+            </div>
+    
+            <div class="pesquisa-container">
+                <select id="campeonatos">
+                    <option value="">-- Selecione um campeonato --</option>
+                    <option value="brasileirao">Brasileirão</option>
+                    <option value="champions">Champions League</option>
+                    <option value="arabia">Arábia Saudita</option>
+                </select>
+                <button id="mostrarClassificacao">Ver Classificação</button>
+            </div>
+    
+            <div class="tabela-container" id="tabelaClassificacao">
+                <img id="tabelaImagem" src="" alt="Tabela de Classificação" style="display:none; max-width: 100%; margin-top: 20px;">
+            </div>
+        </div>
 
-    <div class="menu" id="menu">
-        <a href="iniciar.html">Jogos</a>
-        <a href="transmissao.html">Transmissão</a>
-        <a href="resultados.html">Resultados</a>
-        <a href="configuracao.html">Configuração</a>
     </div>
 
-    <div class="container">
-        <div class="header">
-            <h2>Classificação dos Campeonatos</h2>
-        </div>
-
-        <div class="pesquisa-container">
-            <select id="campeonatos">
-                <option value="">-- Selecione um campeonato --</option>
-                <option value="brasileirao">Brasileirão</option>
-                <option value="champions">Champions League</option>
-                <option value="arabia">Arábia Saudita</option>
-            </select>
-            <button id="mostrarClassificacao">Ver Classificação</button>
-        </div>
-
-        <div class="tabela-container" id="tabelaClassificacao">
-            <img id="tabelaImagem" src="" alt="Tabela de Classificação" style="display:none; max-width: 100%; margin-top: 20px;">
-        </div>
-    </div>
-
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('menu');
-            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block'; // Alterna a exibição do menu
-        }
-
-        // Nova função para redirecionar e fechar o menu
-        function redirecionar(url) {
-            const menu = document.getElementById('menu');
-            menu.style.display = 'none'; // Fecha o menu ao clicar
-            window.location.href = url; // Redireciona para a URL
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

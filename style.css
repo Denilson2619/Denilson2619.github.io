@@ -130,7 +130,36 @@ h2, h3 {
 }
 
 /* Adicione aqui o CSS do menu */
+.menu {
+    display: none; /* Inicialmente, o menu está oculto */
+    position: absolute;
+    top: 50px; /* Distância do topo */
+    left: 10px; /* Distância da esquerda */
+    background-color: white; /* Cor de fundo do menu */
+    border: 1px solid #ccc; /* Borda do menu */
+    z-index: 10; /* Para garantir que o menu fique acima de outros elementos */
+    width: 200px;
+    background-color: #333;
+    /* Outros estilos de menu */
+}
+
+.menu a {
+    display: block; /* Cada link ocupa uma linha */
+    padding: 10px; /* Espaçamento interno */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: black; /* Cor do texto */
+}
+
+.menu a:hover {
+    background-color: #f0f0f0; /* Cor de fundo ao passar o mouse */
+}
+
 .menu-icon {
+    position: absolute;
+    top: 10px; /* Distância do topo */
+    left: 10px; /* Distância da esquerda */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+    font-size: 24px; /* Tamanho do ícone */
     width: 75px;
     height: 75px;
     cursor: pointer;
@@ -146,7 +175,7 @@ h2, h3 {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: white;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -163,7 +192,7 @@ h2, h3 {
 }
 
 .sidebar a:hover {
-    background-color: #575757;
+    background-color: white;
 }
 
 .sidebar .closebtn {
@@ -171,16 +200,6 @@ h2, h3 {
     top: 10px;
     right: 25px;
     font-size: 36px;
-}
-
-.menu {
-    display: none; /* Escondido por padrão */
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 200px;
-    background-color: #333;
-    /* Outros estilos de menu */
 }
 
 .menu.active {
@@ -203,20 +222,40 @@ h2, h3 {
     box-sizing: border-box;
 }
 
+/* Corpo principal com gradiente verde e preto */
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom, #0c0, #000);
-    color: #fff;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #00ff00, #000);
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
+/* Estilos gerais para os containers */
 .container {
-    width: 80%;
+    text-align: center;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    border-radius: 10px;
+    width: 100%;
     max-width: 1200px;
 }
+
+h2, h3 {
+    color: white;
+    margin: 10px 0;
+}
+
+/* Logo centralizada e circular */
+.logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 
 /* Cabeçalho */
 header {
@@ -227,9 +266,7 @@ header {
     background-color: #0f0;
 }
 
-.logo img {
-    height: 60px;
-}
+
 
 .menu-icon {
     display: flex;
