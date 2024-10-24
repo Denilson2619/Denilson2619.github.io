@@ -325,7 +325,7 @@ header {
 
 /*Transmisssao 
 
-/* Estilizando o container do menu e perfil */
+/* Container do menu e ícones */
 .menu-container {
     display: flex;
     justify-content: space-between;
@@ -335,35 +335,45 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: transparent; /* Fundo transparente ou cor de fundo desejada */
-    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo transparente escurecido */
+    z-index: 999; /* Valor alto para garantir que fique sobre outros elementos */
 }
 
+/* Ícone do menu */
 .menu-icon {
     cursor: pointer;
     font-size: 24px;
-    margin-left: 10px;
+    margin-left: 20px;
+    position: fixed;
+    left: 20px; /* Posição fixa no canto esquerdo */
+    top: 20px; /* Posição fixa no topo */
+    z-index: 1000; /* Garantia de sobreposição ao conteúdo */
 }
 
+/* Ícone do perfil do usuário */
 .profile-icon {
     cursor: pointer;
     font-size: 24px;
     position: fixed;
-    right: 20px; /* Mantém o ícone no canto direito */
-    top: 10px;   /* Mantém o ícone no topo */
+    right: 20px; /* Posição fixa no canto direito */
+    top: 20px;   /* Posição fixa no topo */
+    z-index: 1000; /* Sobrepõe ao conteúdo */
 }
 
+/* Menu dropdown oculto inicialmente */
 .menu {
-    display: none; /* O menu começa oculto */
+    display: none; /* Começa oculto */
     background-color: #fff;
     position: absolute;
-    top: 40px;
-    left: 10px;
+    top: 60px; /* Abaixo do ícone do menu */
+    left: 20px;
     width: 150px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para o menu suspenso */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar destaque */
     border-radius: 5px;
+    z-index: 1001; /* Acima do ícone */
 }
 
+/* Estilos dos links do menu */
 .menu a {
     display: block;
     padding: 10px;
@@ -371,6 +381,42 @@ header {
     color: #333;
 }
 
+/* Efeito hover para os links do menu */
 .menu a:hover {
     background-color: #f1f1f1;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .menu-icon {
+        font-size: 60px;
+    }
+
+    .profile-icon {
+        font-size: 60px;
+    }
+
+    .menu {
+        width: 120px; /* Tamanho menor em telas pequenas */
+    }
+}
+
+.team-flags {
+    display: flex; /* Colocar os itens em linha */
+    justify-content: center; /* Centralizar o conteúdo */
+    align-items: center; /* Alinhar verticalmente os itens */
+    gap: 20px; /* Espaçamento entre as bandeiras e o botão play */
+    margin: 20px 0; /* Margem para ajustar o espaço entre as bandeiras e outros elementos */
+}
+
+/* Reduzir o tamanho das bandeiras */
+.team-flags img {
+    width: 100px; /* Ajuste conforme necessário */
+    height: auto; /* Mantém a proporção das imagens */
+}
+
+/* Centralizar e ajustar o tamanho do botão play */
+.play-button img {
+    width: 50px; /* Reduz o tamanho do botão play */
+    height: auto; /* Mantém a proporção do botão */
 }
