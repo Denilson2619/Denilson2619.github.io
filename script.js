@@ -14,7 +14,7 @@ document.querySelectorAll('.carrossel-container').forEach(container => {
     });
 });
 
-document.getElementById('mostrarClassificacao').addEventListener('click', () => {
+function mostrarClassificacao() {
     const campeonato = document.getElementById('campeonatos').value;
     const imgTabela = document.getElementById('tabelaImagem');
 
@@ -32,29 +32,43 @@ document.getElementById('mostrarClassificacao').addEventListener('click', () => 
     } else {
         imgTabela.src = ''; // Limpa o src se não houver seleção
         imgTabela.style.display = 'none'; // Oculta a imagem
-    }
-});
-
-document.getElementById('mostrarClassificacao').addEventListener('click', () => {
-    const campeonato = document.getElementById('campeonatos').value;
-    const imgTabela = document.getElementById('tabelaImagem');
-
-    // Mapeamento de campeonatos para suas respectivas imagens
-    const imagens = {
-        'brasileirao': 'img/brasileiro.png',
-        'champions': 'img/champions.png', // Coloque o caminho correto da imagem da Champions
-        'arabia': 'img/arabia.png' // Coloque o caminho correto da imagem da Arábia Saudita
     };
 
-    // Verifica se o campeonato selecionado tem uma imagem
-    if (imagens[campeonato]) {
-        imgTabela.src = imagens[campeonato]; // Define o src da imagem
-        imgTabela.style.display = 'block'; // Exibe a imagem
-    } else {
-        imgTabela.src = ''; // Limpa o src se não houver seleção
-        imgTabela.style.display = 'none'; // Oculta a imagem
-    }
+    mostrarResultados(); // Chama a função para mostrar resultados
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('campeonato').addEventListener('change', mostrarResultados);
 });
+
+function mostrarResultados() {
+    const campeonato = document.getElementById('campeonato').value;
+    const tabelas = document.querySelectorAll('.tabela-resultados');
+
+    // Ocultar todas as tabelas de resultados
+    tabelas.forEach(tabela => {
+        tabela.style.display = 'none';
+    });
+
+    // Mostrar a tabela correspondente ao campeonato selecionado
+    const tabelaSelecionada = document.querySelector(`.tabela-${campeonato}`);
+    if (tabelaSelecionada) {
+        tabelaSelecionada.style.display = 'block'; // Exibe a tabela selecionada
+    }
+}
+
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block'; // Alterna a exibição do menu
+}
+
+function goToProfile() {
+    window.location.href = "configuracao.html";
+}
+
+
+
+document.getElementById('mostrarClassificacao').addEventListener('click', mostrarClassificacao);
 
 function toggleMenu() {
     const menu = document.getElementById('menu');
@@ -87,13 +101,6 @@ function toggleMenu() {
     menu.classList.toggle('active');
 }
 
-
-function toggleMenu() {
-    var menu = document.getElementById("menu");
-    menu.style.display = menu.style.display === "block" ? "none" : "block";
-}
-
 function goToProfile() {
     window.location.href = "configuracao.html";
 }
-

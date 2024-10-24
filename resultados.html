@@ -7,9 +7,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="menu-icon" onclick="toggleMenu()">&#x22EE;</div> <!-- Três pontinhos -->
+    <div class="menu-icon" onclick="toggleMenu()">&#x22EE;</div>
     <div class="profile-icon" onclick="goToProfile()">👤</div>
-
 
     <div class="menu" id="menu">
         <a href="iniciar.html">Jogos</a>
@@ -17,29 +16,27 @@
     </div>
 
     <div class="container">
-        <!-- Cabeçalho -->
         <header>
             <div class="logo">
                 <img src="img/futmaxANTIGO.jpg" alt="Futemax Logo" class="logo img">
             </div>
-            <div class="menu-icon">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-         
         </header>
 
-        <!-- Seção de Resultados -->
         <main>
             <section class="resultados">
                 <h1>RESULTADOS</h1>
-                <p>CAMPEONATO BRASILEIRO 2024 - 29ª RODADA</p>
+                <p>Resultados da rodada</p>
 
-                <div class="tabela-resultados">
+                <select id="campeonato">
+                    <option value="">Selecione um campeonato</option>
+                    <option value="brasileirao">Campeonato Brasileiro</option>
+                    <option value="champions">Champions League</option>
+                    <option value="arabia">Arábia Saudita</option>
+                </select>
+
+                <div class="tabela-resultados tabela-brasileirao" style="display: none;">
                     <div class="coluna">
-                        <!-- Jogos da esquerda -->
                         <div class="game">
-                
                             <img src="img/logo-bahia-1024.png" alt="Time 1">
                             <p>0x2</p>
                             <img src="img/Flamengo_braz_logo.svg.png" alt="Time 2">
@@ -103,63 +100,71 @@
                             <p>1x1</p>
                             <img src="img/logo-vasco-da-gama-1024.png" alt="Time 20">
                         </div>
-                        
-                        <!-- Jogos da esquerda --
-                
-                        <div class="game">
-                            <img src="img/logo-osasuna-1024.png" alt="Time 1">
-                            <p>1x1</p>
-                            <img src="im" alt="Time 2">
-                         </div>
-                        <div class="game">
-                            <img src="img/rb-leipzig-1024.png" alt="Time 3">
-                            <p>3x2</p>
-                            <img src="img/juventus-football-club-1024.png" alt="Time 4">
-                        </div>
-                        <div class="game">
-                            <img src="img/vfl-wolfsburg-1024.png" alt="Time 5">
-                            <p>2x0</p>
-                            <img src="img/olympique-lyonnais-1024.png" alt="Time 6">
-                        </div>
-                        <div class="game">
-                            <img src="img/paris-saint-germain-1024.png" alt="Time 7">
-                            <p>0x1</p>
-                            <img src="img/logo-psv-eindhoven-2.png" alt="Time 8">
-                        </div>
+                    </div>
+                </div>
 
-                        <div class="coluna">
-                            <!-- Jogos da direita --
+                <div class="tabela-resultados tabela-champions" style="display: none;">
+                    <div class="game">
+                        <img src="img/logo-osasuna-1024.png" alt="Time 1">
+                        <p>1x1</p>
+                        <img src="img/real-betis-logo.png" alt="Time 2">
+                     </div>
+                    <div class="game">
+                        <img src="img/rb-leipzig-1024.png" alt="Time 3">
+                        <p>3x2</p>
+                        <img src="img/juventus-football-club-1024.png" alt="Time 4">
+                    </div>
+                    <div class="game">
+                        <img src="img/vfl-wolfsburg-1024.png" alt="Time 5">
+                        <p>2x0</p>
+                        <img src="img/olympique-lyonnais-1024.png" alt="Time 6">
+                    </div>
+                    <div class="game">
+                        <img src="img/paris-saint-germain-1024.png" alt="Time 7">
+                        <p>0x1</p>
+                        <img src="img/logo-psv-eindhoven-2.png" alt="Time 8">
+                    </div>
+
+                    <div class="coluna">
+                    <div class="game">
+                            <img src="img/associazione-calcio-milan-1024.png" alt="Time 11">
+                            <p>0x2</p>
+                            <img src="img/logo-real-madrid-escudo-1024.png" alt="Time 12">
+                    </div>
+                    <div class="game">
+                            <img src="img/logo-barcelona-1024.png" alt="Time 13">
+                            <p>1x0</p>
+                            <img src="img/as-monaco-1024.png" alt="Time 14">
+                    </div>
+                    <div class="game">
+                            <img src="img/logo-benfica-2.png" alt="Time 15">
+                            <p>2x2</p>
+                            <img src="img/logo-atletico-madrid-1536.png" alt="Time 16">
+                    </div>
+                    <div class="game">
+                            <img src="img/manchester-city-football-club-1024.png" alt="Time 17">
+                            <p>0x1</p>
+                            <img src="img/football-club-internazionale-milano-1024.png" alt="Time 18">
+                    </div>
+                    <div class="game">
+                            <img src="img/bayern-munchen-1024.png" alt="Time 19">
+                            <p>1x3</p>
+                            <img src="img/arsenal-football-club-1024.png" alt="Time 20">
+                    </div>
+                </div>
+
+                <div class="tabela-resultados tabela-arabia" style="display: none;">
+                    <div class="coluna">
                         <div class="game">
-                                <img src="img/associazione-calcio-milan-1024.png" alt="Time 11">
-                                <p>0x2</p>
-                                <img src="img/logo-real-madrid-escudo-1024.png" alt="Time 12">
+                            <img src="img/al-hilal.png" alt="Time 1">
+                            <p>1x0</p>
+                            <img src="img/logo-al-hilal.png" alt="Time 2">
                         </div>
-                        <div class="game">
-                                <img src="img/logo-barcelona-1024.png" alt="Time 13">
-                                <p>1x0</p>
-                                <img src="img/as-monaco-1024.png" alt="Time 14">
-                        </div>
-                        <div class="game">
-                                <img src="img/logo-benfica-2.png" alt="Time 15">
-                                <p>2x2</p>
-                                <img src="img/logo-atletico-madrid-1536.png" alt="Time 16">
-                        </div>
-                        <div class="game">
-                                <img src="img/manchester-city-football-club-1024.png" alt="Time 17">
-                                <p>0x1</p>
-                                <img src="img/football-club-internazionale-milano-1024.png" alt="Time 18">
-                        </div>
-                        <div class="game">
-                                <img src="img/bayern-munchen-1024.png" alt="Time 19">
-                                <p>1x3</p>
-                                <img src="img/arsenal-football-club-1024.png" alt="Time 20"> -->
-                                    
-                       
                     </div>
                 </div>
             </section>
         </main>
     </div>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
