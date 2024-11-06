@@ -5,38 +5,130 @@
     box-sizing: border-box;
 }
 
-/* Corpo principal com gradiente verde e preto */
+/* Garantir que o HTML ocupe 100% da altura da tela */
+html, body {
+    height: 100%; /* Garante que o HTML e o body ocupem 100% da altura da tela */
+    margin: 0;    /* Remove margens padrão */
+}
+
+/* Fundo gradiente vertical com verde e preto */
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #00ff00, #000);
-    height: 100vh;
+    background: linear-gradient(135deg, #008000, #000); /* Gradiente do verde ao preto */
+    color: #fff;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    min-height: 100%; /* Garante que o body ocupe toda a altura disponível */
+    background-size: cover; /* Faz o fundo cobrir toda a área da página, mesmo com a rolagem */
 }
 
-/* Estilos gerais para os containers */
-.container {
-    text-align: center;
-    padding: 40px;
+
+/* Estilização da logo no topo */
+.header {
+    margin-top: 20px;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+/* Container do login */
+.login-container {
     background-color: rgba(0, 0, 0, 0.8);
-    color: #ffffff;
+    padding: 30px 20px;
     border-radius: 10px;
     width: 100%;
-    max-width: 1200px;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
-h2, h3 {
-    color: white;
+/* Títulos */
+h2 {
+    text-align: center;
+    color: #00ff00;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Estilização do formulário */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    width: 100%;
+    padding: 10px;
     margin: 10px 0;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+    font-size: 16px;
 }
 
-/* Logo centralizada e circular */
-.logo { 
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+    border-color: #00cc00;
+    outline: none;
+}
+
+
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+    border-color: #00cc00;
+    outline: none;
+}
+
+/* Botão de login */
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background-color: #00ff00;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #00cc00;
+}
+
+/* Link para cadastro */
+p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #bbb;
+}
+
+p a {
+    color: #00ff00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 600px) {
+    .login-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .logo {
+        width: 100px;
+    }
 }
 
 /* Estilo dos carrosséis */
@@ -420,3 +512,79 @@ header {
     width: 50px; /* Reduz o tamanho do botão play */
     height: auto; /* Mantém a proporção do botão */
 }
+
+/* Estilo da tabela de informações (Nome, Email, Time) */
+.info-table {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto; /* Centraliza a tabela com margem automática nas laterais */
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    text-align: center; /* Centraliza o texto dentro da tabela */
+}
+
+/* Estilo dos parágrafos dentro da tabela */
+.info-table p {
+    margin: 10px 0;
+    font-size: 16px;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+}
+
+.info-table strong {
+    color: #00ff00;
+}
+
+/* Estilo dos campos (select) */
+.campo {
+    margin-bottom: 20px;
+    text-align: center; /* Centraliza o conteúdo dentro da div */
+}
+
+.campo label {
+    font-size: 16px;
+    color: #fff;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.campo select {
+    width: 100%;
+    padding: 10px;
+    background-color: #222;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    max-width: 400px; /* Define uma largura máxima para o select */
+    margin: 0 auto; /* Centraliza o select */
+}
+
+.campo select:focus {
+    border-color: #00cc00;
+    outline: none;
+}
+
+/* Estilo do botão "Salvar Configurações" */
+.campo input[type="button"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #00ff00;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    max-width: 400px; /* Define uma largura máxima para o botão */
+    margin: 0 auto; /* Centraliza o botão */
+}
+
+.campo input[type="button"]:hover {
+    background-color: #00cc00;
+}
+

@@ -7,21 +7,23 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <!-- Logo centralizada -->
+  <!-- Cabeçalho com a logo -->
+  <header class="header">
     <img src="img/futmaxANTIGO.jpg" alt="Logo Futmax" class="logo">
-    
+  </header>
+
+  <!-- Seção principal do login -->
+  <main class="login-container">
     <h2>Login</h2>
     
-    <!-- Formulário de login que vai redirecionar para a nova tela -->
-    <form action="Iniciar_e_confi.html" method="POST">
-      <input type="email" name="email" placeholder="E-mail" required><br>
-      <input type="password" name="senha" placeholder="Senha" required><br>
-      <input type="submit" value="Login">
+    <!-- Formulário de login com redirecionamento -->
+    <form action="iniciar.html" method="POST">
+      <input type="email" name="email" placeholder="E-mail" required>
+      <input type="password" name="senha" placeholder="Senha" required>
+      <button type="submit">Login</button>
     </form>
     
     <p>Não possui conta? <a href="cadastro.html">Cadastre-se</a></p>
-  </div>
+  </main>
 </body>
-</html>
 </html>
