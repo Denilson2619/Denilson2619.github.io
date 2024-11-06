@@ -5,38 +5,28 @@
     box-sizing: border-box;
 }
 
-/* Garantir que o HTML ocupe 100% da altura da tela */
 html, body {
-    height: 100%; /* Garante que o HTML e o body ocupem 100% da altura da tela */
-    margin: 0;    /* Remove margens padrão */
+    height: 100%; /* Garantir que o html e o body ocupem toda a altura da janela */
+    margin: 0; /* Remover as margens padrão */
+    padding: 0; /* Remover o padding padrão */
+    overflow-x: hidden; /* Evitar rolagem horizontal, se necessário */
+    overflow-y: auto; /* Permitir rolagem vertical, se necessário */
 }
 
-/* Fundo gradiente vertical com verde e preto */
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #008000, #000); /* Gradiente do verde ao preto */
-    color: #fff;
+    background: linear-gradient(to bottom, #00ff00, #000000); /* Degradê de verde para preto */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    min-height: 100%; /* Garante que o body ocupe toda a altura disponível */
-    background-size: cover; /* Faz o fundo cobrir toda a área da página, mesmo com a rolagem */
+    min-height: 100vh; /* Garante que o body ocupe pelo menos a altura da tela */
 }
 
-
-/* Estilização da logo no topo */
-.header {
-    margin-top: 20px;
+.container {
+    flex-grow: 1; /* Faz o container crescer para ocupar o restante da altura disponível */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
-.logo {
-    width: 120px;
-    height: auto;
-    border-radius: 50%;
-    margin-bottom: 20px;
-}
-
-/* Container do login */
 .login-container {
     background-color: rgba(0, 0, 0, 0.8);
     padding: 30px 20px;
@@ -45,6 +35,18 @@ body {
     max-width: 400px;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+    margin-top: 0; /* Verifique se esse valor é necessário */
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+    border-radius: 50%;
+    text-align: center;
+    margin-bottom: 20px; /* Considerar se precisa desse espaçamento */
 }
 
 /* Títulos */
@@ -223,17 +225,21 @@ p a:hover {
     }
 }
 
-/* Adicione aqui o CSS do menu */
+/* Menu oculto inicialmente */
 .menu {
-    display: none; /* Inicialmente, o menu está oculto */
+    display: none;
     position: absolute;
-    top: 50px; /* Distância do topo */
-    left: 10px; /* Distância da esquerda */
-    background-color: white; /* Cor de fundo do menu */
-    border: 1px solid #ccc; /* Borda do menu */
-    z-index: 10; /* Para garantir que o menu fique acima de outros elementos */
+    top: 50px;
+    left: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1000; /* Para garantir que o menu fique sobre outros elementos */
     width: 200px;
-    /* Outros estilos de menu */
+}
+
+/* Menu visível quando ativo */
+.menu.active {
+    display: block; /* Mostra o menu quando a classe 'active' é adicionada */
 }
 
 .menu a {
@@ -248,31 +254,30 @@ p a:hover {
 }
 
 .menu-icon {
-    position: absolute;
-    top: 10px; /* Distância do topo */
-    left: 10px; /* Distância da esquerda */
-    cursor: pointer; /* Muda o cursor ao passar o mouse */
-    font-size: 24px; /* Tamanho do ícone */
-    width: 75px;
-    height: 75px;
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 1000;
+    position: fixed;
+    top: 20px; /* Posição no topo */
+    left: 20px; /* Posição à esquerda */
+    z-index: 1000; /* Garantir que o ícone fique acima dos outros elementos */
 }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .menu-icon {
+        font-size: 60px; /* Aumenta o ícone do menu */
+    }
+
 
 .sidebar {
     height: 100%;
-    width: 0;
-    position: fixed;
+    width: 0; /* Largura inicial da sidebar */
+    position: fixed; /* Fixa a sidebar no topo */
     top: 0;
     left: 0;
     background-color: white;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
-    z-index: 1000;
+    z-index: 1000; /* Garante que fique sobre outros elementos */
 }
 
 .sidebar a {
@@ -293,10 +298,6 @@ p a:hover {
     top: 10px;
     right: 25px;
     font-size: 36px;
-}
-
-.menu.active {
-    display: block; /* Mostra o menu quando a classe 'active' é adicionada */
 }
 
 /* Estilos para a imagem da tabela de classificação */
@@ -442,14 +443,11 @@ header {
     z-index: 1000; /* Garantia de sobreposição ao conteúdo */
 }
 
-/* Ícone do perfil do usuário */
 .profile-icon {
-    cursor: pointer;
-    font-size: 24px;
     position: fixed;
-    right: 20px; /* Posição fixa no canto direito */
-    top: 20px;   /* Posição fixa no topo */
-    z-index: 1000; /* Sobrepõe ao conteúdo */
+    top: 20px; /* Posição no topo */
+    right: 20px; /* Posição à direita */
+    z-index: 1000; /* Garantir que o ícone fique acima dos outros elementos */
 }
 
 /* Menu dropdown oculto inicialmente */
@@ -460,8 +458,9 @@ header {
     top: 60px; /* Abaixo do ícone do menu */
     left: 20px;
     width: 150px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar destaque */
+    background-color: #fff;
     border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar destaque */
     z-index: 1001; /* Acima do ícone */
 }
 
@@ -478,19 +477,34 @@ header {
     background-color: #f1f1f1;
 }
 
-/* Responsividade para telas menores */
+/* Responsividade */
 @media (max-width: 768px) {
     .menu-icon {
-        font-size: 60px;
+        font-size: 60px; /* Aumenta o ícone do menu */
     }
 
     .profile-icon {
-        font-size: 60px;
+        font-size: 60px; /* Aumenta o ícone do perfil */
+    }
+
+    .login-container {
+        width: 90%; /* Ajusta a largura do formulário */
+    }
+
+    .logo {
+        width: 100px; /* Ajusta o tamanho do logo */
     }
 
     .menu {
-        width: 120px; /* Tamanho menor em telas pequenas */
+        width: 120px; /* Ajusta a largura do menu */
     }
+
+    /* Ajusta o layout da tabela */
+    .tabela-container, .tabela {
+        width: 100%;
+        overflow-x: auto; /* Permite rolagem horizontal em telas menores */
+    }
+}
 }
 
 .team-flags {
