@@ -178,12 +178,13 @@ p a:hover {
     z-index: 10; /* Garante que os ícones fiquem por cima de outros elementos */
 }
 
-.menu-icon {
-    font-size: 35px;
+.menu-icon, .profile-icon {
+    font-size: 30px;
+    color: #fff;
     cursor: pointer;
 }
 
-.profile-icon {
+/*.profile-icon {
     font-size: 35px;
     cursor: pointer;
 }
@@ -328,4 +329,95 @@ p a:hover {
     display: block;  /* Torna a imagem visível */
     opacity: 1;  /* Torna a imagem totalmente visível */
     transition: opacity 0.3s ease-in-out;  /* Transição suave para a opacidade */
+}
+
+/* Container dos resultados */
+.resultados {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.resultados h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #00ff00; /* Cor verde para destacar o título */
+}
+
+.resultados p {
+    font-size: 18px;
+    color: #bbb; /* Cor mais sutil para o subtítulo */
+    margin-bottom: 20px;
+}
+
+/* Estilização do seletor de campeonato */
+#campeonato {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #333;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+}
+
+/* Centraliza e alinha os resultados dos jogos */
+.resultado-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Container dos itens do jogo */
+.jogo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.jogo-container:hover {
+    transform: scale(1.05);
+}
+
+/* Imagens dos times */
+.jogo-container img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* Placar */
+.jogo-container p {
+    font-size: 24px;
+    color: #00ff00;
+    font-weight: bold;
+    margin: 0;
+}
+
+
+
+
+
+/*.jogo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Espaçamento entre a pontuação e os logos */
+/*    font-size: 16px; /* Ajuste o tamanho da fonte conforme necessário */
+/*    color: black; /* Fonte preta para os resultados */
+/*}
+
+.resultado-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    justify-items: center;
 }
