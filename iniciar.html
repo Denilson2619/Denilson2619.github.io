@@ -11,13 +11,15 @@
 </head>
 <body>
 
-    <div class="menu-icon" onclick="toggleMenu()">&#x22EE;</div> <!-- Três pontinhos -->
-    <div class="profile-icon" onclick="goToProfile()">👤</div>
-
+    <div class="top-bar">
+        <div class="menu-icon" onclick="toggleMenu()">&#x22EE;</div> <!-- Três pontinhos -->
+        <div class="profile-icon" onclick="goToProfile()">👤</div>
+    </div>
+    
     <div class="menu" id="menu">
-    <!--<a href="configuracao.html">Configuração</a> -->
-        <a href="resultados.html">Resultados</a>
-        <a href="classificacao.html">Classificação</a>
+        <!--<a href="configuracao.html">Configuração</a> -->
+        <a href="resultados.html" onclick="redirecionar('resultados.html')">Resultados</a>
+        <a href="classificacao.html" onclick="redirecionar('classificacao.html')">Classificação</a>
     </div>
 
     <div class="container">
@@ -28,60 +30,51 @@
 
         <h3>Brasileirão</h3>
         <div class="carrossel-container">
-            <div class="carrossel" id="carrosselBrasileirao">
-                <div class="jogo"><a href="transmissao.html"><img src="img/FLAvsVAS.png" alt="Jogo 1"></a></div>
-                <div class="jogo"><a href="transmissao.html"> <img src="img/SÃOvsCOR.png" alt="Jogo 2"></a></div>
-                <div class="jogo"><a href="transmissao.html"><img src="img/CAMvsGRE.jfif" alt="Jogo 3"></a></div>
-                <div class="jogo"><a href="transmissao.html"><img src="img/CRIvsCAP.png" alt="Jogo 4"></a></div>
-                <div class="jogo"><a href="transmissao.html"><img src="img/RBBvsPLA.png" alt="Jogo 5"></a></div>
-                <div class="jogo"><a href="transmissao.html"><img src="img/botXcri.png" alt="Jogo 6"></a></div>
-                <div class="jogo"><a href="transmissao.html"><img src="img/vitXbra.png" alt="Jogo 7"></a></div>
-                <div class="jogo"><a href="transmissao.html"><img src="img/greXint.png" alt="Jogo 8"></a></div>
-                <div class="jogo"><a href="transmissao.html"><img src="img/fluXcap.png" alt="Jogo 9"></a></div>
-                <div class="jogo"><a href="transmissao.html"><img src="img/cruXbah.png" alt="Jogo 10"></a></div>
-            </div>
-            <button class="seta esquerda">&#10094;</button>
-            <button class="seta direita">&#10095;</button>
-        </div>
-
+    <button class="seta esquerda" onclick="moverCarrossel('carrosselBrasileirao', 'esquerda')">&#10094;</button>
+    <div class="carrossel" id="carrosselBrasileirao">
+        <div class="jogo"><a href="transmissao.html"><img src="img/FLAvsVAS.png" alt="Jogo 1"></a></div>
+        <div class="jogo"><a href="transmissao.html"><img src="img/SÃOvsCOR.png" alt="Jogo 2"></a></div>
+        <div class="jogo"><a href="transmissao.html"><img src="img/CAMvsGRE.jfif" alt="Jogo 3"></a></div>
+        <div class="jogo"><a href="transmissao.html"><img src="img/CRIvsCAP.png" alt="Jogo 4"></a></div>
+        <div class="jogo"><a href="transmissao.html"><img src="img/RBBvsPLA.png" alt="Jogo 5"></a></div>
+        <div class="jogo"><a href="transmissao.html"><img src="img/botXcri.png" alt="Jogo 6"></a></div>
+        <div class="jogo"><a href="transmissao.html"><img src="img/vitXbra.png" alt="Jogo 7"></a></div>
+        <div class="jogo"><a href="transmissao.html"><img src="img/greXint.png" alt="Jogo 8"></a></div>
+        <div class="jogo"><a href="transmissao.html"><img src="img/fluXcap.png" alt="Jogo 9"></a></div>
+        <div class="jogo"><a href="transmissao.html"><img src="img/cruXbah.png" alt="Jogo 10"></a></div>
+    </div>
+    <button class="seta direita" onclick="moverCarrossel('carrosselBrasileirao', 'direita')">&#10095;</button>
+</div>
         <h3>Arábia Saudita</h3>
         <div class="carrossel-container">
-            <div class="carrossel" id="carrosselArabiaSaudita">
+            <button class="seta esquerda" onclick="moverCarrossel('carrosselArabia', 'esquerda')">&#10094;</button>
+            <div class="carrossel" id="carrosselArabia">
                 <div class="jogo"><a href="transmissao.html"><img src="img/alhilal.2.0.png" alt="Jogo 1"></a></div>
                 <div class="jogo"><a href="transmissao.html"><img src="img/alnassr.2.0.png" alt="Jogo 2"></a></div>
                 <div class="jogo"><a href="transmissao.html"><img src="img/alittihad.png" alt="Jogo 3"></a></div>
                 <div class="jogo"><a href="transmissao.html"><img src="img/alhilal.png" alt="Jogo 4"></a></div>
                 <div class="jogo"><a href="transmissao.html"><img src="img/alnassr.png" alt="Jogo 5"></a></div>
             </div>
-            <button class="seta esquerda">&#10094;</button>
-            <button class="seta direita">&#10095;</button>
+            <button class="seta direita" onclick="moverCarrossel('carrosselArabia', 'direita')">&#10095;</button>
         </div>
+        
+        <!-- Repita a estrutura para os outros carrosséis -->
+        
 
         <h3>Champions League</h3>
         <div class="carrossel-container">
-            <div class="carrossel" id="carrosselChampions">
-                <div class="jogo"><a href="transmissao.html"><img src="img/realXmilan.png" alt="Jogo 1"></a></div>
-                <div class="jogo"><a href="transmissao.html"><img src="img/barçaXmonaco.png" alt="Jogo 2"></a></div>
-                <div class="jogo"><a href="transmissao.html"><img src="img/benficaXatletico.png" alt="Jogo 3"></a></div>
-                <div class="jogo"><a href="transmissao.html"><img src="img/cityXinter.png" alt="Jogo 4"></a></div>
-                <div class="jogo"><a href="transmissao.html"><img src="img/bayerXarsenal.png" alt="Jogo 5"></a></div>
-                <div class="jogo"><a href="transmissao.html"><img src="img/osaXbetis.png" alt="Jogo 6"></a></div>
-                <div class="jogo"><a href="transmissao.html"><img src="img/rbXjuve.png" alt="Jogo 7"></a></div>
-                <div class="jogo"><a href="transmissao.html"><img src="img/lyonsXwo.png" alt="Jogo 8"></a></div>
-                <div class="jogo"><a href="transmissao.html"><img src="img/psgXpsv.png" alt="Jogo 9"></a></div>
+            <button class="seta esquerda" onclick="moverCarrossel('carrosselBrasileirao', 'esquerda')">&#10094;</button>
+            <div class="carrossel" id="carrosselBrasileirao">
+                <div class="jogo"><a href="transmissao.html"><img src="img/FLAvsVAS.png" alt="Jogo 1"></a></div>
+                <div class="jogo"><a href="transmissao.html"><img src="img/SÃOvsCOR.png" alt="Jogo 2"></a></div>
+                <div class="jogo"><a href="transmissao.html"><img src="img/CAMvsGRE.jfif" alt="Jogo 3"></a></div>
+                <!-- ... outros jogos ... -->
             </div>
-            <button class="seta esquerda">&#10094;</button>
-            <button class="seta direita">&#10095;</button>
+            <button class="seta direita" onclick="moverCarrossel('carrosselBrasileirao', 'direita')">&#10095;</button>
         </div>
-
-        <h3>Canais de Transmissão</h3>
-        <div class="canais">
-            <img src="img/globo (1).png" alt="Globo">
-            <img src="img/FOX_Sports.svg.png" alt="Fox Sports">
-            <img src="img/espn-logo-0.png" alt="ESPN">
-            <img src="img/Logotipo_do_SBT.svg.png" alt="SBT">
-            <img src="img/BandSports_logo.svg.png" alt="Band Sports">
-        </div>
+        
+        <!-- Repita a estrutura para os outros carrosséis -->
+        
     </div>
 
     <script src="script.js"></script>

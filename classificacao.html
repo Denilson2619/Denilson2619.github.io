@@ -7,13 +7,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="top-bar">
         <div class="menu-icon" onclick="toggleMenu()">&#x22EE;</div> <!-- Três pontinhos -->
         <div class="profile-icon" onclick="goToProfile()">👤</div>
+    </div>
     
-        <div class="menu" id="menu">
-            <a href="iniciar.html">Jogos</a>
-            <a href="resultados.html">Resultados</a> 
-        </div>
+    <div class="menu" id="menu">
+        <!--<a href="configuracao.html">Configuração</a> -->
+        <a href="resultados.html" onclick="redirecionar('resultados.html')">Resultados</a>
+        <a href="classificacao.html" onclick="redirecionar('classificacao.html')">Classificação</a>
+    </div>
     
         <div class="container">
             <img src="img/futmaxANTIGO.jpg" alt="Logo Futmax" class="logo">

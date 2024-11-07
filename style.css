@@ -5,56 +5,52 @@
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%; /* Garantir que o html e o body ocupem toda a altura da janela */
-    margin: 0; /* Remover as margens padrão */
-    padding: 0; /* Remover o padding padrão */
-    overflow-x: hidden; /* Evitar rolagem horizontal, se necessário */
-    overflow-y: auto; /* Permitir rolagem vertical, se necessário */
-}
-
+/* Estilização do body */
 body {
-    background: linear-gradient(to bottom, #00ff00, #000000); /* Degradê de verde para preto */
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #0c0, #000);
+    color: #fff;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Garante que o body ocupe pelo menos a altura da tela */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-attachment: fixed; /* Faz o fundo ficar fixo durante o scroll */
+    background-size: cover; /* Faz o fundo cobrir toda a página */
 }
 
+/* Container principal */
 .container {
-    flex-grow: 1; /* Faz o container crescer para ocupar o restante da altura disponível */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start; /* Alinha os itens ao topo */
+    align-items: center; /* Centraliza horizontalmente */
     text-align: center;
-}
-
-.login-container {
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 30px 20px;
+    padding: 50px 20px 90px 20px; /* Ajuste o espaço superior */
     border-radius: 10px;
     width: 100%;
-    max-width: 400px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    max-width: 1200px;
 }
 
-.header {
-    margin-top: 0; /* Verifique se esse valor é necessário */
-}
-
+/* Estilização da logo */
 .logo {
     width: 120px;
     height: auto;
     border-radius: 50%;
-    text-align: center;
-    margin-bottom: 20px; /* Considerar se precisa desse espaçamento */
+    margin-bottom: 20px;
+    display: block; /* Garante que o elemento seja tratado como bloco */
+    margin-left: auto;
+    margin-right: auto; /* Centraliza horizontalmente */
 }
 
 /* Títulos */
 h2 {
-    text-align: center;
-    color: #00ff00;
+    color: #fafafa;
     font-size: 24px;
     margin-bottom: 15px;
+    text-align: center;
 }
 
 /* Estilização do formulário */
@@ -72,13 +68,6 @@ form input[type="password"] {
 }
 
 form input[type="text"]:focus,
-form input[type="email"]:focus,
-form input[type="password"]:focus {
-    border-color: #00cc00;
-    outline: none;
-}
-
-
 form input[type="email"]:focus,
 form input[type="password"]:focus {
     border-color: #00cc00;
@@ -109,6 +98,7 @@ p {
     margin-top: 15px;
     font-size: 14px;
     color: #bbb;
+    text-align: center;
 }
 
 p a {
@@ -121,7 +111,7 @@ p a:hover {
     text-decoration: underline;
 }
 
-/* Responsividade para telas menores */
+/* Responsividade */
 @media (max-width: 600px) {
     .login-container {
         width: 90%;
@@ -133,472 +123,209 @@ p a:hover {
     }
 }
 
-/* Estilo dos carrosséis */
-.carrossel-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
-.carrossel {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-
+/* Estilização dos itens do carrossel (jogos) */
 .jogo {
-    min-width: 20%; /* Ajuste este valor para o número de jogos visíveis */
-    display: flex;
-    justify-content: center;
+    display: inline-block;
+    margin: 10px;
 }
 
 .jogo img {
-    width: 100%;
-    max-width: 150px;
+    width: 150px; /* Largura das imagens */
     height: auto;
+    border-radius: 5px; /* Borda arredondada */
+    transition: transform 0.3s;
 }
 
-/* Botões de seta */
-.seta {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.5);
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 5px;
-    z-index: 10;
-    font-size: 30px; /* Aumenta o tamanho da seta */
+/* Efeito de hover nas imagens */
+.jogo img:hover {
+    transform: scale(1.05); /* Aumenta o tamanho da imagem ao passar o mouse */
 }
 
-.seta.esquerda {
-    left: 10px; /* Ajuste conforme necessário */
-}
-
-.seta.direita {
-    right: 10px; /* Ajuste conforme necessário */
-}
-
-/* Estilo dos canais */
-.canais {
+/* Estilização do carrossel */
+.carrossel {
     display: flex;
+    overflow-x: hidden; /* Impede a rolagem visível horizontal */
+    gap: 10px;
+    transition: transform 0.3s ease; /* Transição suave ao mover os itens */
+    width: 100%; /* Garantir que o carrossel ocupe 100% do contêiner */
+}
+
+/* Estilização do contêiner do carrossel */
+.carrossel-container {
+    display: flex;
+    align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
+    position: relative;
+    width: 100%; /* Garantir que o carrossel ocupe todo o espaço disponível */
 }
 
-.canais img {
-    width: 80px;
-    margin: 5px;
-}
-
-/* Estilos da tabela de classificação */
-.tabela-container {
-    margin-top: 20px;
-    
-}
-
-.tabela {
-    width: 100%;
-    border-collapse: collapse;
-    
-}
-
-.tabela th, .tabela td {
-    padding: 10px;
-    border: 1px solid #ffffff;
-    text-align: left; /* Alinha o texto à esquerda */
-}
-
-.tabela th {
-    background-color: #00ff00;
-    color: #000;
-}
-
-/* Estilos responsivos para a tabela */
-@media (max-width: 768px) {
-    .tabela th, .tabela td {
-        padding: 8px; /* Reduz o padding em telas menores */
-    }
-
-    .seta {
-        font-size: 24px; /* Reduz o tamanho da seta em telas menores */
-    }
-}
-
-/* Menu oculto inicialmente */
-.menu {
-    display: none;
-    position: absolute;
-    top: 50px;
-    left: 10px;
-    background-color: white;
-    border: 1px solid #ccc;
-    z-index: 1000; /* Para garantir que o menu fique sobre outros elementos */
-    width: 200px;
-}
-
-/* Menu visível quando ativo */
-.menu.active {
-    display: block; /* Mostra o menu quando a classe 'active' é adicionada */
-}
-
-.menu a {
-    display: block; /* Cada link ocupa uma linha */
-    padding: 10px; /* Espaçamento interno */
-    text-decoration: none; /* Remove o sublinhado dos links */
-    color: black; /* Cor do texto */
-}
-
-.menu a:hover {
-    background-color: #f0f0f0; /* Cor de fundo ao passar o mouse */
-}
-
-.menu-icon {
-    position: fixed;
-    top: 20px; /* Posição no topo */
-    left: 20px; /* Posição à esquerda */
-    z-index: 1000; /* Garantir que o ícone fique acima dos outros elementos */
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .menu-icon {
-        font-size: 60px; /* Aumenta o ícone do menu */
-    }
-
-
-.sidebar {
-    height: 100%;
-    width: 0; /* Largura inicial da sidebar */
-    position: fixed; /* Fixa a sidebar no topo */
-    top: 0;
-    left: 0;
-    background-color: white;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-    z-index: 1000; /* Garante que fique sobre outros elementos */
-}
-
-.sidebar a {
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 25px;
-    color: white;
-    display: block;
-    transition: 0.3s;
-}
-
-.sidebar a:hover {
-    background-color: white;
-}
-
-.sidebar .closebtn {
-    position: absolute;
-    top: 10px;
-    right: 25px;
-    font-size: 36px;
-}
-
-/* Estilos para a imagem da tabela de classificação */
-#tabelaImagem {
-    display: block; /* Certifica que a imagem é um bloco */
-    margin: 0 auto; /* Centraliza a imagem horizontalmente */
-    max-width: 100%; /* Mantém a responsividade */
-}
-
-
-
-/* Estilos gerais */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-/* logo tela de resultado */
-body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom, #0c0, #000);
+/* Estilização do contêiner do menu */
+.menu-icon, .profile-icon {
+    font-size: 30px; /* Ajuste o tamanho dos ícones */
     color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    cursor: pointer;
 }
 
-.container {
-    text-align: center;
-    padding: 90px;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 1200px;
-}
-
-/* Cabeçalho */
-header {
-    display: flex;
-    justify-content: center; /* Centraliza o conteúdo do cabeçalho */
-    align-items: center;
-    padding: 15px;
-    
-}
-
-.logo img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-
-.menu-icon {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 25px;
-}
-
-
-.user-profile img {
-    height: 50px;
-    border-radius: 50%;
-}
-
-/* Seção de Resultados */
-.resultados {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.resultados h1 {
-    font-size: 10px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.resultados p {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-/* Tabela de Resultados */
-.tabela-resultados {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-}
-
-.coluna {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.game {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: rgba(0, 255, 0, 0.2);
-    padding: 10px 20px;
-    border-radius: 10px;
-}
-
-.game p {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.game img {
-    height: 50px;
-    width: 50px;
-}
-
-
-/*Transmisssao 
-
-/* Container do menu e ícones */
-.menu-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    position: fixed;
+/* Estilização da top-bar (barra superior) */
+.top-bar {
+    position: fixed; /* Fixa a barra no topo */
     top: 0;
     left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo transparente escurecido */
-    z-index: 999; /* Valor alto para garantir que fique sobre outros elementos */
+    right: 0;
+    display: flex;
+    justify-content: space-between; /* Alinha os itens nas extremidades */
+    padding: 10px 20px; /* Ajuste o espaço à esquerda e direita */
+    z-index: 10; /* Garante que os ícones fiquem por cima de outros elementos */
 }
 
-/* Ícone do menu */
 .menu-icon {
+    font-size: 35px;
     cursor: pointer;
-    font-size: 24px;
-    margin-left: 20px;
-    position: fixed;
-    left: 20px; /* Posição fixa no canto esquerdo */
-    top: 20px; /* Posição fixa no topo */
-    z-index: 1000; /* Garantia de sobreposição ao conteúdo */
 }
 
 .profile-icon {
-    position: fixed;
-    top: 20px; /* Posição no topo */
-    right: 20px; /* Posição à direita */
-    z-index: 1000; /* Garantir que o ícone fique acima dos outros elementos */
+    font-size: 35px;
+    cursor: pointer;
 }
 
-/* Menu dropdown oculto inicialmente */
-.menu {
-    display: none; /* Começa oculto */
-    background-color: #fff;
-    position: absolute;
-    top: 60px; /* Abaixo do ícone do menu */
-    left: 20px;
-    width: 150px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar destaque */
-    z-index: 1001; /* Acima do ícone */
-}
-
-/* Estilos dos links do menu */
-.menu a {
-    display: block;
+/* Estilização das setas */
+.seta {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 30px;
     padding: 10px;
-    text-decoration: none;
-    color: #333;
+    cursor: pointer;
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Alinha as setas verticalmente no centro do carrossel */
 }
 
-/* Efeito hover para os links do menu */
-.menu a:hover {
-    background-color: #f1f1f1;
+/* Setas à esquerda e direita */
+.seta.esquerda {
+    left: 10px; /* Distância da seta à esquerda */
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .menu-icon {
-        font-size: 60px; /* Aumenta o ícone do menu */
-    }
-
-    .profile-icon {
-        font-size: 60px; /* Aumenta o ícone do perfil */
-    }
-
-    .login-container {
-        width: 90%; /* Ajusta a largura do formulário */
-    }
-
-    .logo {
-        width: 100px; /* Ajusta o tamanho do logo */
-    }
-
-    .menu {
-        width: 120px; /* Ajusta a largura do menu */
-    }
-
-    /* Ajusta o layout da tabela */
-    .tabela-container, .tabela {
-        width: 100%;
-        overflow-x: auto; /* Permite rolagem horizontal em telas menores */
-    }
-}
+.seta.direita {
+    right: 10px; /* Distância da seta à direita */
 }
 
-.team-flags {
-    display: flex; /* Colocar os itens em linha */
-    justify-content: center; /* Centralizar o conteúdo */
-    align-items: center; /* Alinhar verticalmente os itens */
-    gap: 20px; /* Espaçamento entre as bandeiras e o botão play */
-    margin: 20px 0; /* Margem para ajustar o espaço entre as bandeiras e outros elementos */
+.seta:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Reduzir o tamanho das bandeiras */
-.team-flags img {
-    width: 100px; /* Ajuste conforme necessário */
-    height: auto; /* Mantém a proporção das imagens */
-}
-
-/* Centralizar e ajustar o tamanho do botão play */
-.play-button img {
-    width: 50px; /* Reduz o tamanho do botão play */
-    height: auto; /* Mantém a proporção do botão */
-}
-
-/* Estilo da tabela de informações (Nome, Email, Time) */
-.info-table {
+/* Estilização do menu */
+.menu {
+    position: absolute; /* Para o menu ser posicionado em relação ao contêiner */
+    left: 0; /* Faz o menu aparecer na esquerda */
+    top: 50px; /* Distância do topo, se necessário */
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
+    display: none; /* Inicia oculto */
+    width: 200px; /* Largura do menu */
     padding: 20px;
-    border-radius: 10px;
-    margin: 20px auto; /* Centraliza a tabela com margem automática nas laterais */
-    width: 100%;
-    max-width: 600px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    text-align: center; /* Centraliza o texto dentro da tabela */
+    z-index: 10; /* Para garantir que fique por cima de outros elementos */
 }
 
-/* Estilo dos parágrafos dentro da tabela */
-.info-table p {
-    margin: 10px 0;
-    font-size: 16px;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center;     /* Centraliza verticalmente */
-}
-
-.info-table strong {
-    color: #00ff00;
-}
-
-/* Estilo dos campos (select) */
-.campo {
-    margin-bottom: 20px;
-    text-align: center; /* Centraliza o conteúdo dentro da div */
-}
-
-.campo label {
-    font-size: 16px;
-    color: #fff;
+.menu a {
     display: block;
-    margin-bottom: 8px;
-}
-
-.campo select {
-    width: 100%;
-    padding: 10px;
-    background-color: #222;
-    border: 2px solid #00ff00;
-    border-radius: 5px;
     color: #fff;
-    font-size: 16px;
-    max-width: 400px; /* Define uma largura máxima para o select */
-    margin: 0 auto; /* Centraliza o select */
+    text-decoration: none;
+    margin: 10px 0;
 }
 
-.campo select:focus {
-    border-color: #00cc00;
-    outline: none;
+.menu a:hover {
+    text-decoration: underline;
 }
 
-/* Estilo do botão "Salvar Configurações" */
-.campo input[type="button"] {
+/* Estilização da pesquisa-container (formulário) */
+.pesquisa-container {
+    display: flex;
+    flex-direction: column; /* Alinha os elementos verticalmente */
+    align-items: center; /* Centraliza os itens */
+    margin-top: 30px;
     width: 100%;
-    padding: 12px;
-    background-color: #00ff00;
+    max-width: 400px; /* Limita a largura máxima do formulário */
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo sutil para o formulário */
+    padding: 20px;
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+/* Estilização do select (dropdown) */
+.pesquisa-container select {
+    width: 100%; /* Largura total do elemento */
+    padding: 12px; /* Espaço interno */
+    margin: 10px 0; /* Margem superior e inferior */
+    border: 2px solid #00ff00; /* Borda verde */
+    border-radius: 5px; /* Bordas arredondadas */
+    background-color: #222; /* Fundo escuro para combinar com o tema */
+    color: #fff; /* Texto branco */
+    font-size: 16px; /* Tamanho de fonte */
+    cursor: pointer; /* Muda o cursor ao passar por cima */
+    transition: background-color 0.3s, border-color 0.3s; /* Transição suave */
+}
+
+/* Efeito de hover no select */
+.pesquisa-container select:hover {
+    background-color: #333; /* Fundo um pouco mais claro ao passar o mouse */
+    border-color: #00cc00; /* Bordas mais brilhantes */
+}
+
+/* Estilização do botão */
+.pesquisa-container button {
+    padding: 12px 20px; /* Espaçamento interno do botão */
+    background-color: #00ff00; /* Cor de fundo verde */
+    color: #000; /* Cor do texto */
     border: none;
-    border-radius: 5px;
-    color: #000;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    max-width: 400px; /* Define uma largura máxima para o botão */
-    margin: 0 auto; /* Centraliza o botão */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px;
+    font-weight: bold; /* Texto em negrito */
+    cursor: pointer; /* Muda o cursor ao passar por cima */
+    transition: background-color 0.3s; /* Transição suave */
+    margin-top: 10px; /* Distância do elemento anterior */
 }
 
-.campo input[type="button"]:hover {
-    background-color: #00cc00;
+/* Efeito de hover no botão */
+.pesquisa-container button:hover {
+    background-color: #00cc00; /* Cor mais intensa no hover */
 }
 
+/* Responsividade para telas pequenas */
+@media (max-width: 600px) {
+    .pesquisa-container {
+        width: 90%; /* Ajuste para dispositivos móveis */
+        padding: 15px; /* Menos padding */
+    }
+
+    .pesquisa-container select,
+    .pesquisa-container button {
+        font-size: 14px; /* Diminui o tamanho da fonte */
+    }
+}
+
+/* Estilização do contêiner da tabela */
+.tabela-container {
+    width: 100%;  /* Certifique-se de que o contêiner ocupe toda a largura disponível */
+    text-align: center;  /* Centraliza a imagem dentro do contêiner */
+    margin-top: 20px;  /* Espaço superior */
+    display: flex;  /* Flex para garantir que os itens internos sejam alinhados corretamente */
+    justify-content: center;  /* Centraliza a imagem dentro do contêiner */
+}
+
+/* Estilização da imagem da tabela de classificação */
+#tabelaImagem {
+    display: none;  /* Inicialmente a imagem está oculta */
+    max-width: 100%;  /* Garante que a imagem se ajuste à largura do contêiner */
+    height: auto;  /* Ajusta a altura automaticamente para manter a proporção */
+    margin-top: 20px;  /* Espaço superior entre a imagem e outros elementos */
+    transition: opacity 0.3s ease-in-out;  /* Transição suave para opacidade */
+    opacity: 0;  /* Começa invisível */
+}
+
+/* Quando a imagem for carregada e visível */
+#tabelaImagem.show {
+    display: block;  /* Torna a imagem visível */
+    opacity: 1;  /* Torna a imagem totalmente visível */
+    transition: opacity 0.3s ease-in-out;  /* Transição suave para a opacidade */
+}
