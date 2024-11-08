@@ -14,6 +14,7 @@ document.querySelectorAll('.carrossel-container').forEach(container => {
     });
 });
 
+
 function toggleMenu() {
     const menu = document.getElementById('menu');
     // Alterna a classe 'active' para mostrar ou esconder o menu
@@ -62,3 +63,4 @@ document.getElementById("mostrarClassificacao").addEventListener("click", functi
         alert("Por favor, selecione um campeonato!");
     }
 });
+
