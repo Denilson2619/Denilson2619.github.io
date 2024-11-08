@@ -63,4 +63,3 @@ document.getElementById("mostrarClassificacao").addEventListener("click", functi
         alert("Por favor, selecione um campeonato!");
     }
 });
-
