@@ -302,12 +302,12 @@ p a:hover {
 
 /* Estilização do contêiner da tabela */
 .tabela-container {
-    width: 100%;  /* Certifique-se de que o contêiner ocupe toda a largura disponível */
-    text-align: center;  /* Centraliza a imagem dentro do contêiner */
     margin-top: 20px;  /* Espaço superior */
     display: flex;  /* Flex para garantir que os itens internos sejam alinhados corretamente */
-    justify-content: center;  /* Centraliza a imagem dentro do contêiner */
+    justify-content: space-around;  /* Centraliza a imagem dentro do contêiner */
+    gap:20px
 }
+
 
 /* Estilização da imagem da tabela de classificação */
 #tabelaImagem {
@@ -359,22 +359,35 @@ p a:hover {
 
 /* Centraliza e alinha os resultados dos jogos */
 .resultado-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.jogo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.escudo{
+    width: 30px;
+    height: auto;
+}
+
+.placar{
+    font-size: 16px;
+    font-weight: bold;
 }
 
 /* Container dos itens do jogo */
 .jogo-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: space-between;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
     border-radius: 8px;
-    transition: transform 0.3s;
 }
 
 .jogo-container:hover {
@@ -400,19 +413,3 @@ p a:hover {
 
 
 
-
-/*.jogo-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px; /* Espaçamento entre a pontuação e os logos */
-/*    font-size: 16px; /* Ajuste o tamanho da fonte conforme necessário */
-/*    color: black; /* Fonte preta para os resultados */
-/*}
-
-.resultado-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    justify-items: center;
-}
