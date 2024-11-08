@@ -14,6 +14,7 @@ document.querySelectorAll('.carrossel-container').forEach(container => {
     });
 });
 
+
 function toggleMenu() {
     const menu = document.getElementById('menu');
     // Alterna a classe 'active' para mostrar ou esconder o menu
@@ -44,33 +45,21 @@ function salvarTimeFavorito() {
     }
 }
 
-document.getElementById("campeonato").addEventListener("change", function() {
-    const campeonato = this.value;
-    const tabelas = document.querySelectorAll(".tabela-resultados");
+document.getElementById("mostrarClassificacao").addEventListener("click", function() {
+    const campeonato = document.getElementById("campeonatos").value;
     
-    // Esconder todas as tabelas
-    tabelas.forEach(tabela => tabela.style.display = "none");
-    
-    // Mostrar a tabela correspondente
     if (campeonato) {
-        document.querySelector(`.tabela-${campeonato}`).style.display = "block";
+        const tabelaImagem = document.getElementById("tabelaImagem");
+        tabelaImagem.src = `img/${campeonato}.png`;  // Mudando para .png
+
+        tabelaImagem.onload = function() {
+            tabelaImagem.classList.add('show');  /* Exibe a imagem quando carregada */
+        };
+
+        tabelaImagem.onerror = function() {
+            alert("Erro ao carregar a tabela. Verifique o arquivo de imagem.");
+        };
+    } else {
+        alert("Por favor, selecione um campeonato!");
     }
 });
-// document.getElementById("mostrarClassificacao").addEventListener("click", function() {
-//    const campeonato = document.getElementById("campeonatos").value;
-    
-//    if (campeonato) {
-//        const tabelaImagem = document.getElementById("tabelaImagem");
-//        tabelaImagem.src = `img/${campeonato}.png`;  // Mudando para .png
-//
-//        tabelaImagem.onload = function() {
-//            tabelaImagem.classList.add('show');  /* Exibe a imagem quando carregada */
-//        };
-
-//      tabelaImagem.onerror = function() {
-//            alert("Erro ao carregar a tabela. Verifique o arquivo de imagem.");
-//        };
-//    } else {
-//        alert("Por favor, selecione um campeonato!");
-//    }
-//});
