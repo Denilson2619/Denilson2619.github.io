@@ -180,7 +180,7 @@ p a:hover {
     cursor: pointer;
 }
 
-/*.profile-icon {
+.profile-icon {
     font-size: 35px;
     cursor: pointer;
 }
@@ -300,23 +300,17 @@ p a:hover {
     }
 }
 
-/* Estilização do contêiner da tabela */
-.tabela-container {
-    margin-top: 20px;  /* Espaço superior */
-    display: flex;  /* Flex para garantir que os itens internos sejam alinhados corretamente */
-    justify-content: space-around;  /* Centraliza a imagem dentro do contêiner */
-    gap:20px
-}
-
-
-/* Estilização da imagem da tabela de classificação */
+/* Estilização da imagem da tabela */
 #tabelaImagem {
+    position: absolute; /* A imagem vai se sobrepor ao layout */
+    top: 420px; /* Reduzido o valor de top para subir mais a imagem */
+    left: 50%;
+    transform: translateX(-50%); /* Para centralizar horizontalmente */
+    max-width: 100%;
+    height: auto;
     display: none;  /* Inicialmente a imagem está oculta */
-    max-width: 100%;  /* Garante que a imagem se ajuste à largura do contêiner */
-    height: auto;  /* Ajusta a altura automaticamente para manter a proporção */
-    margin-top: 20px;  /* Espaço superior entre a imagem e outros elementos */
-    transition: opacity 0.3s ease-in-out;  /* Transição suave para opacidade */
-    opacity: 0;  /* Começa invisível */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 
 /* Quando a imagem for carregada e visível */
@@ -410,6 +404,44 @@ p a:hover {
     margin: 0;
 }
 
+/* Títulos */
+.campo {
+    color: #fafafa;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-align: center;
+}
 
+.form-select {
+width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+    font-size: 16px;
+}
 
+/* Estilização da classe 'btn' */
+.btn {
+    padding: 10px 20px; /* Ajusta o espaçamento interno do botão */
+    background-color: #00ff00; /* Cor de fundo do botão */
+    color: #000; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Texto em negrito */
+    border: none; /* Remove borda */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer; /* Muda o cursor para pointer ao passar por cima */
+    transition: background-color 0.3s ease; /* Transição suave apenas na cor de fundo */
+}
 
+/* Efeito de hover no botão */
+.btn:hover {
+    background-color: #00cc00; /* Muda a cor do botão quando o mouse passa por cima */
+}
+
+.btn, .btn:hover {
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, transform 0s;
+}
