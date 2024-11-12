@@ -79,28 +79,12 @@ document.getElementById("mostrarClassificacao").addEventListener("click", functi
 });
 
 // Exibir resultados
-document.getElementById("mostrarResultados").addEventListener("click", function() {
-    const campeonato = document.getElementById("campeonatoResultados").value;
-    const resultadosContainer = document.getElementById("resultados");
-
-    // Limpa resultados anteriores
-    resultadosContainer.innerHTML = "";
-
-    if (campeonato && resultadosDosJogos[campeonato]) {
-        resultadosDosJogos[campeonato].forEach(jogo => {
-            const jogoDiv = document.createElement("div");
-            jogoDiv.classList.add("jogo");
-
-            // Estrutura HTML para exibir escudo, placar e nome dos times
-            jogoDiv.innerHTML = `
-                <img src="img/${jogo.time1}.png" alt="${jogo.time1}" class="escudo">
-                <span class="placar">${jogo.placar}</span>
-                <img src="img/${jogo.time2}.png" alt="${jogo.time2}" class="escudo">
-            `;
-
-            resultadosContainer.appendChild(jogoDiv);
-        });
-    } else {
-        alert("Por favor, selecione um campeonato válido!");
+document.getElementById("campeonato").addEventListener("change", function() {
+    const selected = this.value;
+    document.querySelectorAll('.tabela-resultados').forEach(table => {
+        table.style.display = 'none'; // Esconde todas as tabelas
+    });
+    if (selected) {
+        document.getElementById(`tabela-${selected}`).style.display = 'block'; // Mostra a tabela selecionada
     }
 });

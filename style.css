@@ -445,3 +445,80 @@ width: 100%;
     box-sizing: border-box;
     transition: background-color 0.3s ease, transform 0s;
 }
+
+
+@media (max-width: 768px) {
+    .jogo-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .jogo-container p {
+        font-size: 18px;
+    }
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+select {
+    padding: 10px;
+    margin: 20px;
+    font-size: 16px;
+}
+
+.tabela-resultados {
+    display: none;
+    margin-top: 20px;
+}
+
+.tabela-resultados table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.tabela-resultados td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.tabela-resultados h2 {
+    margin-bottom: 10px;
+}
+
+/* Estilização das tabelas de resultados */
+.tabela-resultados {
+    display: flex; 
+    width: 45%; 
+    margin: 115px; 
+    text-align: center; 
+    margin-top: 15px;
+}
+
+/* Estilização para os itens de cada jogo */
+.jogo-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 15px ;
+    background-color: rgba(0, 0, 0, 0.3); /* Fundo semi-transparente */
+    border-radius: 8px;
+}
+
+.jogo-container img {
+    width: 50px; /* Ajusta o tamanho dos logos dos times */
+    height: auto;
+}
