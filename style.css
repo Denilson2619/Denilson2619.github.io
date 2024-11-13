@@ -323,16 +323,31 @@ p a:hover {
 
 /* Ajuste para a área de resultados */
 .resultados {
-    width: 100%;
     text-align: center;
-    display: block;  /* Agora ocupa o espaço completo abaixo do botão */
-    padding-top: 60px;  /* Para garantir que os resultados comecem abaixo da seleção */
+    color: #fff;  
+    margin-top: 20px;
 }
 
 .resultados h1 {
     font-size: 32px;
-    margin-bottom: 10px;
-    color: #00ff00; /* Cor verde para destacar o título */
+    color: #fafafa; /* Cor verde para destacar o título */
+}
+
+/* Estilos das linhas e jogos */
+.linha {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.resultados select {
+    padding: 5px;
+    margin-top: 10px;
+    font-size: 16px;
+    border: 1px solid #fff;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
 }
 
 .resultados p {
@@ -361,10 +376,18 @@ p a:hover {
     gap: 10px;
 }
 
-.jogo{
+.jogo2{
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    width: 120px;
+    height: 60px;
+    margin: 0 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .escudo{
