@@ -303,15 +303,15 @@ p a:hover {
 
 /* Estilização da imagem da tabela */
 #tabelaImagem {
-    position: absolute; /* A imagem vai se sobrepor ao layout */
-    top: 420px; /* Reduzido o valor de top para subir mais a imagem */
-    left: 50%;
-    transform: translateX(-50%); /* Para centralizar horizontalmente */
     max-width: 100%;
     height: auto;
-    display: none;  /* Inicialmente a imagem está oculta */
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: trabsform 0.3s ease; /* Para centralizar horizontalmente */
+}
+
+#tabelaImagem:hover {
+    transform: scale(1.05);
 }
 
 /* Quando a imagem for carregada e visível */
@@ -549,7 +549,9 @@ select {
 }
 
 .tabela-container {
-    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 20px;
 }
 

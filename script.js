@@ -48,33 +48,39 @@ function salvarTimeFavorito() {
     }
 }
 
+// Adiciona um evento ao botão para exibir a imagem da tabela
 document.getElementById("mostrarClassificacao").addEventListener("click", function() {
     const campeonato = document.getElementById("campeonatos").value;
-    
+    const tabelaImagem = document.getElementById("tabelaImagem");
+
     if (campeonato) {
-        const tabelaImagem = document.getElementById("tabelaImagem");
-        tabelaImagem.src = `img/${campeonato}.png`;  // Isso irá gerar algo como img/brasileiro.png
+        const imagemPath = `img/${campeonato}.png`; // Caminho da imagem
 
-        // Log para verificar o caminho da imagem
-        console.log(`Tentando carregar a imagem: img/${campeonato}.png`);
+        tabelaImagem.src = imagemPath;  // Define a imagem a ser exibida
 
-        // Exibe a imagem enquanto ela está carregando
-        tabelaImagem.style.display = "block";
+        // Exibe uma imagem de carregamento ou uma barra de progresso (opcional)
+        tabelaImagem.style.display = "none"; // Inicialmente oculta até carregar a imagem
 
-        tabelaImagem.onload = function() {
-            tabelaImagem.classList.add('show');  /* Exibe a imagem quando carregada */
-            tabelaImagem.style.opacity = 1;
+        // Espera a imagem carregar corretamente
+        const img = new Image();
+        img.src = imagemPath;
+
+        img.onload = function() {
+            // Sucesso ao carregar
+            tabelaImagem.src = imagemPath;  // Atualiza a imagem a ser exibida
+            tabelaImagem.style.display = "block";  // Exibe a imagem
+            console.log("Imagem carregada com sucesso.");
         };
-        
-        tabelaImagem.onerror = function() {
-            console.error(`Erro ao carregar a tabela. Caminho tentado: img/${campeonato}.png`);
+
+        img.onerror = function() {
+            // Erro ao carregar a imagem
+            console.error(`Erro ao carregar a tabela. Verifique se a imagem ${campeonato}.png existe na pasta img.`);
             alert("Erro ao carregar a tabela. Verifique o arquivo de imagem.");
-            tabelaImagem.style.display = "none"; // Esconde a imagem caso ocorra erro
+            tabelaImagem.style.display = "none";  // Esconde a imagem caso ocorra erro
         };
     } else {
         alert("Por favor, selecione um campeonato!");
-        const tabelaImagem = document.getElementById("tabelaImagem");
-        tabelaImagem.style.display = "none"; // Esconde a imagem caso não tenha campeonato selecionado
+        tabelaImagem.style.display = "none";  // Esconde a imagem caso não tenha campeonato selecionado
     }
 });
 
