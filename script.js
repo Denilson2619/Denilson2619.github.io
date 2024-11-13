@@ -78,13 +78,16 @@ document.getElementById("mostrarClassificacao").addEventListener("click", functi
     }
 });
 
-// Exibir resultados
-document.getElementById("campeonato").addEventListener("change", function() {
-    const selected = this.value;
-    document.querySelectorAll('.tabela-resultados').forEach(table => {
-        table.style.display = 'none'; // Esconde todas as tabelas
+function mostrarResultados() {
+    const selecionado = document.getElementById('campeonato').value;
+    const tabelas = document.querySelectorAll('.tabela-container');
+
+    tabelas.forEach(tabela => {
+        tabela.style.display = 'none'; // Esconde todas as tabelas
     });
-    if (selected) {
-        document.getElementById(`tabela-${selected}`).style.display = 'block'; // Mostra a tabela selecionada
+
+    if (selecionado) {
+        document.getElementById(selecionado).style.display = 'block'; // Mostra a tabela selecionada
     }
-});
+}
+
