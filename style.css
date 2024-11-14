@@ -390,23 +390,27 @@ p a:hover {
     font-weight: bold;
 }
 
-.escudo{
-    width: 30px;
+/* Estilo para as logos dos times */
+.escudo {
+    width: 40px; /* Ajuste o tamanho conforme necessário */
     height: auto;
 }
 
-.placar{
-    font-size: 16px;
+/* Estilo para o placar entre as logos */
+.placar {
+    font-size: 18px;
     font-weight: bold;
+    color: #fff;
 }
 
+/* Estilização do contêiner de cada jogo */
 .jogo-container {
-    width: 23%; /* Ajuste para que cada jogo ocupe uma quarta parte da linha */
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    gap: 10px; /* Espaço entre o placar e as logos */
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.2); /* Fundo semi-transparente */
+    border-radius: 8px;
 }
 
 .jogo-container:hover {
@@ -527,15 +531,16 @@ select {
     margin-top: 15px;
 }
 
-/* Estilização para os itens de cada jogo */
+/* Estilização do contêiner de cada jogo */
 .jogo-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* Coloca as logos e o placar com espaço entre eles */
+    width: 250px; /* Ajuste a largura conforme necessário */
     padding: 10px;
-    margin: 15px ;
-    background-color: rgba(0, 0, 0, 0.3); /* Fundo semi-transparente */
+    background-color: rgba(0, 0, 0, 0.2); /* Fundo semi-transparente */
     border-radius: 8px;
+    margin: 10px;
 }
 
 .jogo-container img {
@@ -581,16 +586,17 @@ select {
     align-items: center;
 }
 
-/* Estilos principais para organizar os jogos em linhas de 4 */
+/* Estilização para organizar os jogos em linhas e colunas */
 .coluna-jogos {
     display: flex;
-    flex-wrap: wrap; /* Permite que os itens quebrem em novas linhas */
-    gap: 20px; /* Espaço entre os jogos */
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
+/* Estilo para o contêiner principal que organiza os jogos em uma linha horizontal */
 .linha-jogos {
     display: flex;
-    width: 100%;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Permite que os jogos quebrem linha se a tela for pequena */
+    gap: 20px; /* Espaço entre os jogos */
+    justify-content: center; /* Centraliza os jogos horizontalmente */
 }
