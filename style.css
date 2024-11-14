@@ -303,22 +303,22 @@ p a:hover {
 
 /* Estilização da imagem da tabela */
 #tabelaImagem {
-    max-width: 100%;
-    height: auto;
+    display: none; /* Inicialmente oculta a imagem */
+    position: absolute; /* Remove a imagem do fluxo do layout */
+    top: 100px;  /* Ajuste a posição vertical conforme necessário */
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza a imagem horizontalmente */
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: trabsform 0.3s ease; /* Para centralizar horizontalmente */
-}
-
-#tabelaImagem:hover {
-    transform: scale(1.05);
+    transition: opacity 0.3s ease-in-out;
 }
 
 /* Quando a imagem for carregada e visível */
 #tabelaImagem.show {
-    display: block;  /* Torna a imagem visível */
-    opacity: 1;  /* Torna a imagem totalmente visível */
-    transition: opacity 0.3s ease-in-out;  /* Transição suave para a opacidade */
+    display: block; /* Torna a imagem visível */
+    opacity: 1;  /* Opacidade total para a imagem */
 }
 
 /* Ajuste para a área de resultados */
@@ -571,11 +571,14 @@ select {
     cursor: pointer;
 }
 
+/* Estilização do contêiner da tabela */
 .tabela-container {
+    position: relative; /* Define o contexto para o posicionamento absoluto da imagem */
+    width: 100%;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
 }
 
 /* Estilos principais para organizar os jogos em linhas de 4 */

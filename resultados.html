@@ -1,30 +1,34 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultados - Campeonato Brasileiro 2024</title>
+    <title>Resultados</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="top-bar">
+        <div class="menu-icon" onclick="toggleMenu()">&#x22EE;</div> <!-- Três pontinhos -->
+        <div class="profile-icon" onclick="goToProfile()">👤</div>
+    </div>
+
+    <div class="menu" id="menu">
+        <a href="iniciar.html">Jogos</a>
+        <a href="classificacao.html">Classificação</a>
+    </div>
+
     <div class="container">
+        <img src="img/futmaxANTIGO.jpg" alt="Logo Futmax" class="logo">
         <div class="header">
-            <img src="img/futmaxANTIGO.jpg" alt="Logo Futmax" class="logo">
-            <h2>Jogos disponíveis</h2>
+            <h2>Resultados dos Jogos</h2>
         </div>
-    <div class="container">
-        <!-- Header com logo, título e seleção de campeonato -->
-        <header class="fixed-header">
-            <div class="resultados">
-                <h1>RESULTADOS</h1>
-                <p>Resultados da rodada</p>
-            </div>
-            <select id="campeonato" onchange="mostrarResultados()">
-                <option value="">Selecione um campeonato</option>
-                <option value="brasileirao">Campeonato Brasileiro</option>
-                <option value="champions">Champions League</option>
-                <option value="epicos">Jogos Épicos</option>
-            </select>
+
+        <select id="campeonato" onchange="mostrarResultados()">
+            <option value="">Selecione um campeonato</option>
+            <option value="brasileirao">Campeonato Brasileiro</option>
+            <option value="champions">Champions League</option>
+            <option value="epicos">Jogos Épicos</option>
+        </select>
 
             <!-- Divs de resultados dos campeonatos dentro do header -->
             <div id="brasileirao" class="tabela-container" style="display: none;">
