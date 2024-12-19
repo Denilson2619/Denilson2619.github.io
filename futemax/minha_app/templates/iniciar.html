@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogos do Dia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="menu-icon" onclick="toggleMenu()">&#x22EE;</div> <!-- Três pontinhos -->
+    <div class="profile-icon" onclick="goToProfile()">👤</div>
+</div>
+    
+    <div class="menu" id="menu">
+        <a href="resultados.html" onclick="redirecionar('resultados.html')">Resultados</a>
+        <a href="classificacao.html" onclick="redirecionar('classificacao.html')">Classificação</a>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <img src="img/futmaxANTIGO.jpg" alt="Logo Futmax" class="logo">
+            <h2>Jogos disponíveis</h2>
+        </div>
+
+        <h3>Brasileirão</h3>
+        <div class="carrossel-container">
+            <button class="seta esquerda" onclick="moverCarrossel('carrosselBrasileirao', 'esquerda')">&#10094;</button>
+            <div class="carrossel" id="carrosselBrasileirao">
+                <div class="jogo"><a href="melhores_momentos_flaxvas.html"><img src="img/FLAvsVAS.png" alt="Flamengo x Vasco"></a></div>
+                <div class="jogo"><a href="melhores_momentos_saoxcor.html"><img src="img/SÃOvsCOR.png" alt="São Paulo x Corinthians"></a></div>
+                <div class="jogo"><a href="melhores_momentos_crixcap.html"><img src="img/CRIvsCAP.png" alt="Criciúma x CAP"></a></div>
+                <div class="jogo"><a href="melhores_momentos_rbbvspla.html"><img src="img/RBBvsPLA.png" alt="Red Bull Bragantino x Palmeiras"></a></div>
+                <div class="jogo"><a href="melhores_momentos_botxflu.html"><img src="img/botxflu.png" alt="Botafogo x Fluminense"></a></div>
+                <div class="jogo"><a href="melhores_momentos_cuixatl.html"><img src="img/cuixatlgo.png" alt="Cuiabá x Atlético-GO"></a></div>
+                <div class="jogo"><a href="melhores_momentos_grexint.html"><img src="img/greXint.png" alt="Grêmio x Internacional"></a></div>
+                <div class="jogo"><a href="melhores_momentos_forxatl.html"><img src="img/forxatl.png" alt="Fortaleza x Atlético Mineiro"></a></div>
+                <div class="jogo"><a href="melhores_momentos_cruxbah.html"><img src="img/cruXbah.png" alt="Cruzeiro x Bahia"></a></div>
+            </div>
+            <button class="seta direita" onclick="moverCarrossel('carrosselBrasileirao', 'direita')">&#10095;</button>
+        </div>
+
+        <h3>Épicos</h3>
+        <div class="carrossel-container">
+            <button class="seta esquerda" onclick="moverCarrossel('carrosselArabia', 'esquerda')">&#10094;</button>
+            <div class="carrossel" id="carrosselArabia">
+                <div class="jogo"><a href="melhores_momentos_cityxreal.html"><img src="img/cityxreal.png" alt="Manchester City x Real Madrid"></a></div>
+                <div class="jogo"><a href="melhores_momentos_barcaxpsg.html"><img src="img/barcaxpsg.png" alt="Barcelona x PSG"></a></div>
+                <div class="jogo"><a href="melhores_momentos_braxita.html"><img src="img/braxita.png" alt="Brasil x Itália"></a></div>
+                <div class="jogo"><a href="melhores_momentos_argxfra.html"><img src="img/argxfra.png" alt="Argentina x França"></a></div>
+                <div class="jogo"><a href="melhores_momentos_flaxsan.html"><img src="img/flaaxsann.PNG" alt="Flamengo x Santos"></a></div>
+                <div class="jogo"><a href="melhores_momentos_chexcor.html"><img src="img/chelseaXcorinthians.png" alt="Chelsea x Corinthians"></a></div>
+                <div class="jogo"><a href="melhores_momentos_tottexajax.html"><img src="img/totxajax.PNG" alt="Ajax x Tottenham"></a></div>
+                <div class="jogo"><a href="melhores_momentos_saopxliv.html"><img src="img/saopXliv.PNG" alt="Liverpool x São Paulo"></a></div>
+                <div class="jogo"><a href="melhores_momentos_milanxunited.html"><img src="img/uniteddxmilan.png" alt="Manchester United x Milan"></a></div>
+            </div>
+            <button class="seta direita" onclick="moverCarrossel('carrosselArabia', 'direita')">&#10095;</button>
+        </div>
+
+        <h3>Champions League</h3>
+        <div class="carrossel-container">
+            <button class="seta esquerda" onclick="moverCarrossel('carrosselChampions', 'esquerda')">&#10094;</button>
+            <div class="carrossel" id="carrosselChampions">
+                <div class="jogo"><a href="melhores_momentos_bayerxarsenal.html"><img src="img/bayerXarsenal.png" alt="Bayer Munique x Arsenal"></a></div>
+                <div class="jogo"><a href="melhores_momentos_barcaxmonaco.html"><img src="img/barçaXmonaco.png" alt="Barcelona x Monaco"></a></div>
+                <div class="jogo"><a href="melhores_momentos_realxmilan.html"><img src="img/realXmilan.png" alt="Real Madrid x Milan"></a></div>
+                <div class="jogo"><a href="melhores_momentos_benficaxatletico.html"><img src="img/benficaXatletico.png" alt="Benfica x Atletico"></a></div>
+                <div class="jogo"><a href="melhores_momentos_psgxpsv.html"><img src="img/psgXpsv.png" alt="PSG x PSV"></a></div>
+                <div class="jogo"><a href="melhores_momentos_livxbay.html"><img src="img/livxbay.png" alt="Liverpool x Bayer Leverkusen"></a></div>
+                <div class="jogo"><a href="melhores_momentos_rbxjuve.html"><img src="img/rbXjuve.png" alt="RB Leipzig x Juventus"></a></div>
+                <div class="jogo"><a href="melhores_momentos_cityxinter.html"><img src="img/cityXinter.png" alt="Manchester City x Inter"></a></div>
+                <div class="jogo"><a href="melhores_momentos_bruggexaston.html"><img src="img/bruggexaston.png" alt="Club Brugge x Aston Villa"></a></div>
+            </div>
+            <button class="seta direita" onclick="moverCarrossel('carrosselChampions', 'direita')">&#10095;</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

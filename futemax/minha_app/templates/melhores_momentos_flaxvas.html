@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FuteMax - Transmissão ao Vivo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="top-bar">
+    <div class="menu-icon" onclick="toggleMenu()">⋮</div>
+    <div class="profile-icon" onclick="goToProfile()">👤</div>
+</div>
+    <div class="menu" id="menu">
+        <a href="iniciar.html">Jogos</a>
+        <a href="resultados.html">Resultados</a>
+        <a href="classificacao.html">Classificação</a>
+    </div>
+
+    <div class="container">
+
+        <div class="game-info">
+           
+            <div class="team-flags">
+                <!-- Envolver o botão "play" com um link <a> -->
+                <div class="play-button">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ZIPcL2Azgck?si=yhuq6OMNGiuj2vku" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="summary">
+            <h2>Resumo da Partida: Flamengo x Vasco</h2>
+       
+
+        <div class="details">
+            <p><strong>Data:</strong> 15 de setembro de 2024</p>
+            <p><strong>Horário:</strong> 16h00 (horário de Brasília)</p>
+            <p><strong>Local:</strong> Maracanã, Rio de Janeiro</p>
+        </div>
+        <br>
+        <div class="comments">
+                <h3>Comentários</h3>
+                <p>O clássico entre Flamengo e Vasco, válido pela 26ª rodada do Campeonato Brasileiro 2024, foi recheado de emoção, apesar do empate em 1 a 1. Ambas as equipes brigam por objetivos diferentes na competição, mas o duelo foi equilibrado e com bons momentos de futebol. Gerson e Coutinho marcam, e clássico entre Flamengo e Vasco termina empatado no Maracanã. Depois de dominar boa parte do jogo, o Flamengo saiu na frente, mas cedeu o empate no fim.</p>
+        </div>
+        </div>
+    </div> 
+
+    <script src="script.js"></script>
+</body>
+</html>

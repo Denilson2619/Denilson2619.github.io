@@ -1,27 +1,54 @@
-{% extends 'modelo.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FuteMax - Transmissão ao Vivo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="top-bar">
+    <div class="menu-icon" onclick="toggleMenu()">⋮</div>
+    <div class="profile-icon" onclick="goToProfile()">👤</div>
+</div>
+    <div class="menu" id="menu">
+        <a href="iniciar.html">Jogos</a>
+        <a href="resultados.html">Resultados</a>
+        <a href="classificacao.html">Classificação</a>
+    </div>
 
-{% block content %}
-<div class="game-info">
-    <div class="team-flags">
-        <div class="play-button">
-            <!-- Vídeo do YouTube embutido -->
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/KXT0N2RLD0A?si=rCodgA4v7S6T6DW3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="container">
+
+        <div class="game-info">
+           
+            <div class="team-flags">
+                <!-- Envolver o botão "play" com um link <a> -->
+                <div class="play-button">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/KXT0N2RLD0A?si=rCodgA4v7S6T6DW3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+        <br>
+        <div class="summary">
+            <h2>Resumo da Partida: Monaco x Barcelona</h2>
+       
 
-<div class="summary">
-    <h2>Resumo da Partida: Monaco x Barcelona</h2>
+        <div class="details">
+            <p><strong>Data:</strong> 19 de setembro de 2024</p>
+            <p><strong>Horário:</strong> 16h00 (horário de Brasília)</p>
+            <p><strong>Local:</strong>  Estádio Louis II</p>
+        </div>
+        <br>
+        <div class="comments">
+                <h3>Comentários</h3>
+                <p>Em um jogo de altos e baixos, o Barcelona foi derrotado pelo Mônaco por 2 a 1, em uma partida marcada por um gol histórico de Lamine Yamal, mas também por uma derrota amarga e uma expulsão que complicou ainda mais a situação dos catalães na fase de grupos da Liga dos Campeões. Embora o jovem prodígio tenha conquistado sua primeira marca na competição, com um gol que brilhou como uma grande promessa para o futuro, a derrota foi inevitável após uma série de falhas e um final frustrante para o Barça.</p>
+        </div>
+        </div>
+    </div> 
 
-    <div class="details">
-        <p><strong>Data:</strong> 19 de setembro de 2024</p>
-        <p><strong>Horário:</strong> 16h00 (horário de Brasília)</p>
-        <p><strong>Local:</strong> Estádio Louis II</p>
-    </div>
-
-    <div class="comments">
-        <h3>Comentários</h3>
-        <p>Em um jogo de altos e baixos, o Barcelona foi derrotado pelo Mônaco por 2 a 1, em uma partida marcada por um gol histórico de Lamine Yamal...</p>
-    </div>
-</div>
-{% endblock %}
+    <script src="script.js"></script>
+</body>
+</html>

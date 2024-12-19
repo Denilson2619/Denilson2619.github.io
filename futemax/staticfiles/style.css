@@ -1,0 +1,602 @@
+/* Reset de margem e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilização do body */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #0c0, #000);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-attachment: fixed; /* Faz o fundo ficar fixo durante o scroll */
+    background-size: cover; /* Faz o fundo cobrir toda a página */
+}
+
+/* Container principal */
+.container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinha os itens ao topo */
+    align-items: center; /* Centraliza horizontalmente */
+    text-align: center;
+    padding: 50px 20px 90px 20px; /* Ajuste o espaço superior */
+    border-radius: 10px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Estilização da logo */
+.logo {
+    width: 120px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    display: block; /* Garante que o elemento seja tratado como bloco */
+    margin-left: auto;
+    margin-right: auto; /* Centraliza horizontalmente */
+    background-color: transparent;  /* Garantir que não tenha fundo */
+}
+
+/* Títulos */
+h2 {
+    color: #fafafa;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Estilização do formulário */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+    font-size: 16px;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+    border-color: #00cc00;
+    outline: none;
+}
+
+/* Botão de login */
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background-color: #00ff00;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #00cc00;
+}
+
+/* Link para cadastro */
+p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #bbb;
+    text-align: center;
+}
+
+p a {
+    color: #00ff00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .login-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .logo {
+        width: 100px;
+    }
+}
+
+/* Estilização dos itens do carrossel (jogos) */
+.carrossel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carrossel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.jogo {
+    min-width: 20%; /* Ajuste este valor para o número de jogos visíveis */
+    display: flex;
+    justify-content: center;
+    
+}
+
+.jogo img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 5px; /* Borda arredondada */
+    transition: transform 0.3s;
+}
+
+/* Efeito de hover nas imagens */
+.jogo img:hover {
+    transform: scale(1.05); /* Aumenta o tamanho da imagem ao passar o mouse */
+}
+
+/* Estilização do contêiner do menu */
+.menu-icon, .profile-icon {
+    font-size: 30px; /* Ajuste o tamanho dos ícones */
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Estilização da top-bar (barra superior) */
+.top-bar {
+    position: fixed; /* Fixa a barra no topo */
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between; /* Alinha os itens nas extremidades */
+    padding: 10px 20px; /* Ajuste o espaço à esquerda e direita */
+    z-index: 10; /* Garante que os ícones fiquem por cima de outros elementos */
+}
+
+.menu-icon, .profile-icon {
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.profile-icon {
+    font-size: 35px;
+    cursor: pointer;
+}
+
+/* Botões de seta */
+.seta {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10;
+    font-size: 30px; /* Aumenta o tamanho da seta */
+}
+
+.seta.esquerda {
+    left: 10px; /* Ajuste conforme necessário */
+}
+
+.seta.direita {
+    right: 10px; /* Ajuste conforme necessário */
+}
+
+.seta:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Estilização do menu */
+.menu {
+    position: absolute; /* Para o menu ser posicionado em relação ao contêiner */
+    left: 0; /* Faz o menu aparecer na esquerda */
+    top: 50px; /* Distância do topo, se necessário */
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    display: none; /* Inicia oculto */
+    width: 200px; /* Largura do menu */
+    padding: 20px;
+    z-index: 10; /* Para garantir que fique por cima de outros elementos */
+}
+
+.menu a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+/* Estilização da pesquisa-container (formulário) */
+.pesquisa-container {
+    display: flex;
+    flex-direction: column; /* Alinha os elementos verticalmente */
+    align-items: center; /* Centraliza os itens */
+    margin-top: 30px;
+    width: 100%;
+    max-width: 400px; /* Limita a largura máxima do formulário */
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo sutil para o formulário */
+    padding: 20px;
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+/* Estilização do select (dropdown) */
+.pesquisa-container select {
+    width: 100%; /* Largura total do elemento */
+    padding: 12px; /* Espaço interno */
+    margin: 10px 0; /* Margem superior e inferior */
+    border: 2px solid #00ff00; /* Borda verde */
+    border-radius: 5px; /* Bordas arredondadas */
+    background-color: #222; /* Fundo escuro para combinar com o tema */
+    color: #fff; /* Texto branco */
+    font-size: 16px; /* Tamanho de fonte */
+    cursor: pointer; /* Muda o cursor ao passar por cima */
+    transition: background-color 0.3s, border-color 0.3s; /* Transição suave */
+}
+
+/* Efeito de hover no select */
+.pesquisa-container select:hover {
+    background-color: #333; /* Fundo um pouco mais claro ao passar o mouse */
+    border-color: #00cc00; /* Bordas mais brilhantes */
+}
+
+/* Estilização do botão */
+.pesquisa-container button {
+    padding: 12px 20px; /* Espaçamento interno do botão */
+    background-color: #00ff00; /* Cor de fundo verde */
+    color: #000; /* Cor do texto */
+    border: none;
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px;
+    font-weight: bold; /* Texto em negrito */
+    cursor: pointer; /* Muda o cursor ao passar por cima */
+    transition: background-color 0.3s; /* Transição suave */
+    margin-top: 10px; /* Distância do elemento anterior */
+}
+
+/* Efeito de hover no botão */
+.pesquisa-container button:hover {
+    background-color: #00cc00; /* Cor mais intensa no hover */
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 600px) {
+    .pesquisa-container {
+        width: 90%; /* Ajuste para dispositivos móveis */
+        padding: 15px; /* Menos padding */
+    }
+
+    .pesquisa-container select,
+    .pesquisa-container button {
+        font-size: 14px; /* Diminui o tamanho da fonte */
+    }
+}
+
+/* Estilização da imagem da tabela */
+#tabelaImagem {
+    display: none; /* Inicialmente oculta a imagem */
+    position: absolute; /* Remove a imagem do fluxo do layout */
+    top: 100px;  /* Ajuste a posição vertical conforme necessário */
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza a imagem horizontalmente */
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Quando a imagem for carregada e visível */
+#tabelaImagem.show {
+    display: block; /* Torna a imagem visível */
+    opacity: 1;  /* Opacidade total para a imagem */
+}
+
+/* Ajuste para a área de resultados */
+.resultados {
+    text-align: center;
+    color: #fff;  
+    margin-top: 20px;
+}
+
+.resultados h1 {
+    font-size: 32px;
+    color: #fafafa; /* Cor verde para destacar o título */
+}
+
+/* Estilos das linhas e jogos */
+.linha {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.resultados select {
+    padding: 5px;
+    margin-top: 10px;
+    font-size: 16px;
+    border: 1px solid #fff;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.resultados p {
+    font-size: 18px;
+    color: #bbb; /* Cor mais sutil para o subtítulo */
+    margin-bottom: 20px;
+}
+
+/* Estilização do seletor de campeonato */
+#campeonato {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #333;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+}
+
+/* Centraliza e alinha os resultados dos jogos */
+.resultado-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.jogo2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 60px;
+    margin: 0 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Estilo para as logos dos times */
+.escudo {
+    width: 40px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+}
+
+/* Estilo para o placar entre as logos */
+.placar {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Estilização do contêiner de cada jogo */
+.jogo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaço entre o placar e as logos */
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.2); /* Fundo semi-transparente */
+    border-radius: 8px;
+}
+
+.jogo-container:hover {
+    transform: scale(1.05);
+}
+
+.jogo-container img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.jogo-container p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+/* Títulos */
+.campo {
+    color: #fafafa;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.form-select {
+width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+    font-size: 16px;
+}
+
+/* Estilização da classe 'btn' */
+.btn {
+    padding: 10px 20px; /* Ajusta o espaçamento interno do botão */
+    background-color: #00ff00; /* Cor de fundo do botão */
+    color: #000; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Texto em negrito */
+    border: none; /* Remove borda */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer; /* Muda o cursor para pointer ao passar por cima */
+    transition: background-color 0.3s ease; /* Transição suave apenas na cor de fundo */
+}
+
+/* Efeito de hover no botão */
+.btn:hover {
+    background-color: #00cc00; /* Muda a cor do botão quando o mouse passa por cima */
+}
+
+.btn, .btn:hover {
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, transform 0s;
+}
+
+
+@media (max-width: 768px) {
+    .jogo-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .jogo-container p {
+        font-size: 18px;
+    }
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+select {
+    padding: 10px;
+    margin: 20px;
+    font-size: 16px;
+}
+
+.tabela-resultados {
+    display: none;
+    margin-top: 20px;
+}
+
+.tabela-resultados table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.tabela-resultados td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.tabela-resultados h2 {
+    margin-bottom: 10px;
+}
+
+/* Estilização das tabelas de resultados */
+.tabela-resultados {
+    display: flex; 
+    width: 45%; 
+    margin: 115px; 
+    text-align: center; 
+    margin-top: 15px;
+}
+
+/* Estilização do contêiner de cada jogo */
+.jogo-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Coloca as logos e o placar com espaço entre eles */
+    width: 250px; /* Ajuste a largura conforme necessário */
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.2); /* Fundo semi-transparente */
+    border-radius: 8px;
+    margin: 10px;
+}
+
+.jogo-container img {
+    width: 50px; /* Ajusta o tamanho dos logos dos times */
+    height: auto;
+}
+
+/* Centraliza a logo e o botão no meio da tela */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  /* Isso faz o container ocupar toda a altura da tela */
+    flex-direction: column;
+    position: relative;
+}
+
+.fixed-header {
+    text-align: center;
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%); /* Para garantir que o conteúdo fique centralizado */
+}
+
+.logo-img {
+    width: 150px;  /* Ajuste o tamanho da logo conforme necessário */
+    margin-bottom: 20px;  /* Espaçamento entre a logo e o botão */
+}
+
+select {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Estilização do contêiner da tabela */
+.tabela-container {
+    position: relative; /* Define o contexto para o posicionamento absoluto da imagem */
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilização para organizar os jogos em linhas e colunas */
+.coluna-jogos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Estilo para o contêiner principal que organiza os jogos em uma linha horizontal */
+.linha-jogos {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os jogos quebrem linha se a tela for pequena */
+    gap: 20px; /* Espaço entre os jogos */
+    justify-content: center; /* Centraliza os jogos horizontalmente */
+}

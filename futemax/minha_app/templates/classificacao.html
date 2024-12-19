@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificação dos Campeonatos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="menu-icon" onclick="toggleMenu()">&#x22EE;</div> <!-- Três pontinhos -->
+        <div class="profile-icon" onclick="goToProfile()">👤</div>
+    </div>
+
+    <div class="menu" id="menu">
+        <a href="iniciar.html">Jogos</a>
+        <a href="resultados.html">Resultados</a>
+    </div>
+
+    <div class="container">
+        <img src="img/futmaxANTIGO.jpg" alt="Logo Futmax" class="logo">
+        <div class="header">
+            <h2>Classificação dos Campeonatos</h2>
+        </div>
+
+        <div class="pesquisa-container">
+            <select id="campeonatos">
+                <option value="">-- Selecione um campeonato --</option>
+                <option value="brasileiro">Brasileirão</option>
+                <option value="champions">Champions League</option>
+            </select>
+            <button id="mostrarClassificacao">Ver Classificação</button>
+        </div>
+
+        <div class="tabela-container" id="tabelaClassificacao">
+            <img id="tabelaImagem" src="" alt="Tabela de Classificação" style="display:none; max-width: 100%; margin-top: 20px;">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

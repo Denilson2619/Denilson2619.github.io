@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FuteMax - Transmissão ao Vivo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="top-bar">
+    <div class="menu-icon" onclick="toggleMenu()">⋮</div>
+    <div class="profile-icon" onclick="goToProfile()">👤</div>
+</div>
+    <div class="menu" id="menu">
+        <a href="iniciar.html">Jogos</a>
+        <a href="resultados.html">Resultados</a>
+        <a href="classificacao.html">Classificação</a>
+    </div>
+
+    <div class="container">
+
+        <div class="game-info">
+           
+            <div class="team-flags">
+                <!-- Envolver o botão "play" com um link <a> -->
+                <div class="play-button">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/wRW9Uo3RzkY?si=YB4OYLKdpmDGWyUQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="summary">
+            <h2>Resumo da Partida: PSG x PSV</h2>
+       
+
+        <div class="details">
+            <p><strong>Data:</strong> 22 de outubro de 2024</p>
+            <p><strong>Horário:</strong> 16h00 (horário de Brasília)</p>
+            <p><strong>Local:</strong> Parc des Princes, França</p>
+        </div>
+        <br>
+        <div class="comments">
+                <h3>Comentários</h3>
+                <p>Em uma partida repleta de tensão e emoção, o PSG empatou em casa contra o PSV por 1 a 1, em um jogo marcado por um gol salvador de Achraf Hakimi, mas também por um erro incrível do goleiro do PSV, que quase custou a vitória do time holandes na Liga dos Campeões. Embora o PSG tenha se mostrado dominante durante boa parte do jogo, a resistência do PSV deixaram o resultado em aberto até o apito final.</p>
+        </div>
+        </div>
+    </div> 
+
+    <script src="script.js"></script>
+</body>
+</html>

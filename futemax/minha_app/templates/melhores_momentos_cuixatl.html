@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FuteMax - Transmissão ao Vivo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="top-bar">
+    <div class="menu-icon" onclick="toggleMenu()">⋮</div>
+    <div class="profile-icon" onclick="goToProfile()">👤</div>
+</div>
+    <div class="menu" id="menu">
+        <a href="iniciar.html">Jogos</a>
+        <a href="resultados.html">Resultados</a>
+        <a href="classificacao.html">Classificação</a>
+    </div>
+
+    <div class="container">
+
+        <div class="game-info">
+           
+            <div class="team-flags">
+                <!-- Envolver o botão "play" com um link <a> -->
+                <div class="play-button">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/SxdI4Daz8Tg?si=3B29ZMttB1jodG92" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="summary">
+            <h2>Resumo da Partida: Atlético-GO x Cuiabá</h2>
+       
+
+        <div class="details">
+            <p><strong>Data:</strong> 18 de outubro de 2024</p>
+            <p><strong>Horário:</strong> 20h00 (horário de Brasília)</p>
+            <p><strong>Local:</strong> Estádio Antônio Accioly</p>
+        </div>
+        <br>
+        <div class="comments">
+                <h3>Comentários</h3>
+                <p>Atlético-GO e Cuiabá empataram por 0 a 0 pela 30ª rodada da Série A do Campeonato Brasileiro. O jogo foi marcado por um grande equilíbrio, mas também por um desempenho abaixo das expectativas em termos de criatividade ofensiva. O Dragão até teve mais volume de jogo, mas sem grande inspiração para chegar ao gol. Já o Dourado praticamente não atacou e, mesmo com a posse de bola do adversário, foi incapaz de ameaçar a meta de Ronaldo. Assim, o placar permaneceu zerado no estádio Antônio Accioly.</p>
+        </div>
+        </div>
+    </div> 
+
+
+    <script src="script.js"></script>
+</body>
+</html>
+

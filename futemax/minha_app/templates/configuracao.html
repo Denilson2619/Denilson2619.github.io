@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Logo centralizada -->
+        <img src="img/futmaxANTIGO.jpg" alt="Logo Futmax" class="logo">
+        
+        <div class="top-bar">        
+            <div class="menu-icon" onclick="toggleMenu()">&#x22EE;</div> <!-- Três pontinhos -->
+        </div>
+
+        <div class="menu" id="menu">
+            <a href="iniciar.html">Jogos</a>
+            <a href="resultados.html">Resultados</a>
+            <a href="classificacao.html">Classificação</a>
+        </div>
+
+        <div class="login-container">
+            <h2>Perfil do Usuário</h2>
+
+            <div class="campo">
+                <label for="userEmail"><strong>Email:</strong></label>
+                <p id="userEmail"></p>
+            </div>
+
+            <div class="campo">
+                <label for="userName"><strong>Nome:</strong></label>
+                <p id="userName"></p>
+            </div>
+
+            <div class="campo">
+                <label for="timeFavorito"><strong>Selecione seu time favorito:</strong></label>
+                <select id="timeFavorito" name="timeFavorito" class="form-select">
+                    <option value="">Selecione</option>
+                    <option value="flamengo">Flamengo</option>
+                    <option value="palmeiras">Palmeiras</option>
+                    <option value="santos">Santos</option>
+                    <option value="corinthians">Corinthians</option>
+                    <option value="saopaulo">São Paulo</option>
+                    <option value="vasco">Vasco</option>
+                    <option value="juventude">Juventude</option>
+                    <option value="Atlético Mineiro">Atlético Mineiro</option>
+                    <option value="Atlético Goianiense">Atlético Goianiense</option>
+                    <option value="Cuiabá">Cuiabá</option>
+                    <option value="fluminense">Fluminense</option>
+                    <option value="criciuma">Criciuma</option>
+                    <option value="vitoria">Vitoria</option>
+                    <option value="bahia">Bahia</option>
+                    <option value="fortaleza">Fortaleza</option>
+                    <option value="athletico paranaense">Athletico Paranaense</option>
+                    <option value="botafogo">Botafogo</option>
+                    <option value="gremio">Gremio</option>
+                    <option value="bragantino">Bragantino</option>
+                    <option value="cruzeiro">Cruzeiro</option>
+                    <option value="internacional">Internacional</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <button class="btn" onclick="salvarTimeFavorito()">Salvar Configurações</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

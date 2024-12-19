@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FuteMax - Transmissão ao Vivo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="top-bar">
+    <div class="menu-icon" onclick="toggleMenu()">⋮</div>
+    <div class="profile-icon" onclick="goToProfile()">👤</div>
+</div>
+    <div class="menu" id="menu">
+        <a href="iniciar.html">Jogos</a>
+        <a href="resultados.html">Resultados</a>
+        <a href="classificacao.html">Classificação</a>
+    </div>
+
+    <div class="container">
+
+        <div class="game-info">
+           
+            <div class="team-flags">
+                <!-- Envolver o botão "play" com um link <a> -->
+                <div class="play-button">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/rNhp99BdoVY?si=l6y5_RcqqUusPiEo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="summary">
+            <h2>Resumo da Partida: Club Brugge x Aston Villa</h2>
+       
+
+        <div class="details">
+            <p><strong>Data:</strong> 16 de novembro de 2024</p>
+            <p><strong>Horário:</strong> 16h00 (horário de Brasília)</p>
+            <p><strong>Local:</strong> Jan Breydel Stadium, Belgica</p>
+        </div>
+        <br>
+        <div class="comments">
+                <h3>Comentários</h3>
+                <p>Em um jogo marcado por tensão e surpresas, o Club Brugge conseguiu uma vitória importante por 1 a 0 sobre o Aston Villa, em um duelo válido pela Liga Europa. O gol da vitória foi marcado por un gol de pênalti, mas o grande destaque da partida foi um momento curioso e inesquecível envolvendo o goleiro Emiliano "Dibu" Martínez, que foi protagonista de um pênalti bizarro que deixou todos em choque. Com uma vitória suada e importante para as aspirações do time belga, o Club Brugge soube aproveitar a oportunidade, enquanto o Aston Villa se viu frustrado com a chance perdida de empatar a partida.</p>
+        </div>
+        </div>
+    </div> 
+
+    <script src="script.js"></script>
+</body>
+</html>

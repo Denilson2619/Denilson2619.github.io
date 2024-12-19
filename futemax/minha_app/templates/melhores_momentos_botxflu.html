@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FuteMax - Transmissão ao Vivo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="top-bar">
+    <div class="menu-icon" onclick="toggleMenu()">⋮</div>
+    <div class="profile-icon" onclick="goToProfile()">👤</div>
+</div>
+    <div class="menu" id="menu">
+        <a href="iniciar.html">Jogos</a>
+        <a href="resultados.html">Resultados</a>
+        <a href="classificacao.html">Classificação</a>
+    </div>
+
+    <div class="container">
+
+        <div class="game-info">
+           
+            <div class="team-flags">
+                <!-- Envolver o botão "play" com um link <a> -->
+                <div class="play-button">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/8rP7QrxeWLE?si=gGVTkOrGPYk9czST" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="summary">
+            <h2>Resumo da Partida: Fluminense x Botafogo</h2>
+       
+
+        <div class="details">
+            <p><strong>Data:</strong> 21 de setembro de 2024</p>
+            <p><strong>Horário:</strong> 21h00 (horário de Brasília)</p>
+            <p><strong>Local:</strong> Maracanã, Rio de Janeiro</p>
+        </div>
+        <br>
+        <div class="comments">
+                <h3>Comentários</h3>
+                <p>O Botafogo venceu o Fluminense por 1 a 0 no clássico carioca válido pela 27ª rodada do Campeonato Brasileiro 2024, em um jogo marcado por muita emoção, mas também por um grande equilíbrio entre as duas equipes. Com a vitória, o Botafogo seguiu firme em sua busca pelo topo da tabela, enquanto o Fluminense, apesar da boa atuação, não conseguiu aproveitar as chances para sair com o empate ou a vitória.</p>
+        </div>
+        </div>
+    </div> 
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+

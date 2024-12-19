@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FuteMax - Transmissão ao Vivo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="top-bar">
+    <div class="menu-icon" onclick="toggleMenu()">⋮</div>
+    <div class="profile-icon" onclick="goToProfile()">👤</div>
+</div>
+    <div class="menu" id="menu">
+        <a href="iniciar.html">Jogos</a>
+        <a href="resultados.html">Resultados</a>
+        <a href="classificacao.html">Classificação</a>
+    </div>
+
+    <div class="container">
+
+        <div class="game-info">
+           
+            <div class="team-flags">
+                <!-- Envolver o botão "play" com um link <a> -->
+                <div class="play-button">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Ga_usEbnQ8E?si=ahaWhoOZLIo2ppxv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="summary">
+            <h2>Resumo da Partida: Cruzeiro x Bahia</h2>
+       
+
+        <div class="details">
+            <p><strong>Data:</strong> 18 de outubro de 2024</p>
+            <p><strong>Horário:</strong> 21h00 (horário de Brasília)</p>
+            <p><strong>Local:</strong> Estádio Mineirão, Belo Horizonte</p>
+        </div>
+        <br>
+        <div class="comments">
+                <h3>Comentários</h3>
+                <p>Cruzeiro e Bahia empataram por 1 a 1 em um confronto marcado por muita emoção e alternâncias de domínio, válido pela 30ª rodada do Campeonato Brasileiro de 2024. O jogo, disputado no Mineirão, foi intenso e cheio de chances, com as duas equipes se alternando no controle da partida e criando boas oportunidades para sair com os três pontos. O empate foi justo, refletindo a luta das duas equipes que buscavam uma vitória crucial para suas respectivas campanhas no campeonato.</p>
+        </div>
+        </div>
+    </div> 
+
+    <script src="script.js"></script>
+</body>
+</html>

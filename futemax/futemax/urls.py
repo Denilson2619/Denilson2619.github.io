@@ -14,9 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.http import HttpResponse  # Adicionado para criar uma view simples
+
+def home(request):
+    return HttpResponse("Bem-vindo ao Futemax!")  # Página inicial do site
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('minha_app/', include ('minha_app.urls')),
+    path('', home, name='home'),  # Adiciona a rota para a URL raiz
+    path('minha_app/', include('minha_app.urls')),
 ]

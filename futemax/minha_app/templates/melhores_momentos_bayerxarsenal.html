@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FuteMax - Transmissão ao Vivo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="top-bar">
+    <div class="menu-icon" onclick="toggleMenu()">⋮</div>
+    <div class="profile-icon" onclick="goToProfile()">👤</div>
+</div>
+    <div class="menu" id="menu">
+        <a href="iniciar.html">Jogos</a>
+        <a href="resultados.html">Resultados</a>
+        <a href="classificacao.html">Classificação</a>
+    </div>
+
+    <div class="container">
+
+        <div class="game-info">
+           
+            <div class="team-flags">
+                <!-- Envolver o botão "play" com um link <a> -->
+                <div class="play-button">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/OFDNrURfWIs?si=kC6gg5iF1KHanAx4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="summary">
+            <h2>Resumo da Partida: Bayern Munique x Arsenal</h2>
+       
+
+        <div class="details">
+            <p><strong>Data:</strong> 09 de março de 2024</p>
+            <p><strong>Horário:</strong> 16h00 (horário de Brasília)</p>
+            <p><strong>Local:</strong> Estádio Emirates, Londres</p>
+        </div>
+        <br>
+        <div class="comments">
+                <h3>Comentários</h3>
+                <p>O jogo entre Arsenal e Bayern de Munique, foi uma verdadeira demonstração de intensidade, técnica e emoção, com ambos os times mostrando toda sua qualidade e força. O empate por 2 a 2 trouxe momentos de brilhantismo e equilíbrio, com grandes atuações individuais, destacando-se o artilheiro Harry Kane, que marcou para o Bayern, e Gabriel Jesus, que, ao entrar no segundo tempo, foi decisivo para o empate do Arsenal, dando uma linda assistência para o gol de Leandro Trossard.</p>
+        </div>
+        </div>
+    </div> 
+
+
+    <script src="script.js"></script>
+</body>
+</html>
