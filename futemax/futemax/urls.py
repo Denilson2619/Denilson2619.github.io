@@ -15,13 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.http import HttpResponse  # Adicionado para criar uma view simples
 
-def home(request):
-    return HttpResponse("Bem-vindo ao Futemax!")  # Página inicial do site
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home, name='home'),  # Adiciona a rota para a URL raiz
     path('minha_app/', include('minha_app.urls')),
 ]
+
+

@@ -5,21 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil do Usuário</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
     <div class="container">
         <!-- Logo centralizada -->
-        <img src="img/futmaxANTIGO.jpg" alt="Logo Futmax" class="logo">
+        <img src="{% static 'img/futmaxANTIGO.jpg' %}" alt="Logo Futmax" class="logo">
         
         <div class="top-bar">        
             <div class="menu-icon" onclick="toggleMenu()">&#x22EE;</div> <!-- Três pontinhos -->
         </div>
 
         <div class="menu" id="menu">
-            <a href="iniciar.html">Jogos</a>
-            <a href="resultados.html">Resultados</a>
-            <a href="classificacao.html">Classificação</a>
+            <a href="{% url 'jogos' %}">Jogos</a>
+            <a href="{% url 'resultados' %}">Resultados</a>
+            <a href="{% url 'classificacao' %}">Classificação</a>
         </div>
 
         <div class="login-container">
@@ -27,12 +27,12 @@
 
             <div class="campo">
                 <label for="userEmail"><strong>Email:</strong></label>
-                <p id="userEmail"></p>
+                <p id="userEmail">{{ user.email }}</p>
             </div>
 
             <div class="campo">
                 <label for="userName"><strong>Nome:</strong></label>
-                <p id="userName"></p>
+                <p id="userName">{{ user.get_full_name }}</p>
             </div>
 
             <div class="campo">
@@ -46,15 +46,15 @@
                     <option value="saopaulo">São Paulo</option>
                     <option value="vasco">Vasco</option>
                     <option value="juventude">Juventude</option>
-                    <option value="Atlético Mineiro">Atlético Mineiro</option>
-                    <option value="Atlético Goianiense">Atlético Goianiense</option>
-                    <option value="Cuiabá">Cuiabá</option>
+                    <option value="atletico_mineiro">Atlético Mineiro</option>
+                    <option value="atletico_goianiense">Atlético Goianiense</option>
+                    <option value="cuiaba">Cuiabá</option>
                     <option value="fluminense">Fluminense</option>
                     <option value="criciuma">Criciuma</option>
                     <option value="vitoria">Vitoria</option>
                     <option value="bahia">Bahia</option>
                     <option value="fortaleza">Fortaleza</option>
-                    <option value="athletico paranaense">Athletico Paranaense</option>
+                    <option value="athletico_paranaense">Athletico Paranaense</option>
                     <option value="botafogo">Botafogo</option>
                     <option value="gremio">Gremio</option>
                     <option value="bragantino">Bragantino</option>
@@ -69,6 +69,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="{% static 'script.js' %}"></script>
 </body>
 </html>

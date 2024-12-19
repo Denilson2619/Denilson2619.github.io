@@ -5,7 +5,9 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.core.mail import send_mail
-from django.http import HttpResponse
+from minha_app.models import CustomUser
+from django.shortcuts import render
+
 
 # Create your views here.
 
@@ -21,34 +23,40 @@ def index_view(request):
 
         if user is not None:
             login(request, user)
-            return redirect("iniciar")  # Redireciona para a página inicial após login bem-sucedido
+            return redirect("index")  # Redireciona para a página inicial após login bem-sucedido
         else:
             messages.error(request, "E-mail ou senha incorretos.")
             return redirect("index")  # Redireciona para a página de login
 
-    return render(request, "index.html")  # Renderiza o template de login
+    return render(request, "index")  # Renderiza o template de login
+
+
 
 def cadastro_view(request):
     if request.method == "POST":
-        nome = request.POST.get("nome")
-        email = request.POST.get("email")
-        senha = request.POST.get("senha")
-        confirma_senha = request.POST.get("confirma_senha")
+        username = request.POST['username']  # Agora você está capturando o 'username'
+        nome = request.POST['nome']
+        email = request.POST['email']
+        senha = request.POST['senha']
+        confirma_senha = request.POST['confirma_senha']
 
         # Verificar se as senhas coincidem
-        if senha != confirma_senha:
-            messages.error(request, "As senhas não coincidem.")
-            return redirect("cadastro")  # Redireciona para a página de cadastro
-        
-        # Verificar se o email já está registrado
-        if User.objects.filter(email=email).exists():
-            messages.error(request, "Este e-mail já está cadastrado.")
-            return redirect("cadastro")
+        if senha == confirma_senha:
+            # Criar o usuário com o nome de usuário
+            user = CustomUser.objects.create_user(
+                username=username,
+                nome=nome,
+                email=email,
+                password=senha
+            )
+            user.save()
+            return redirect('index')  # Redirecionar para a página de login
+        else:
+            # Se as senhas não coincidirem
+            return render(request, 'cadastro', {'error': 'As senhas não coincidem.'})
 
-        # Criar o usuário
-        User.objects.create_user(username=nome, email=email, password=senha)
+    return render(request, 'cadastro')
 
-    return render(request, 'cadastro.html')
 
 def modelo_view(request):
     return render(request, 'modelo.html')
@@ -73,7 +81,7 @@ def classificacao_view(request):
 
     return render(
         request,
-        "classificacao.html",
+        "classificacao",
         {"tabela": tabela, "campeonato_selecionado": campeonato_selecionado},
     )
 
@@ -169,92 +177,7 @@ def resultados_view(request):
     )
 
 
-def modelo_view(request):
-    return render(request, 'modelo.html')
 
-def modelo_view(request):
-    return render(request, 'modelo.html')
-
-def modelo_view(request):
-    return render(request, 'modelo.html')
-
-def modelo_view(request):
-    return render(request, 'modelo.html')
-
-def modelo_view(request):
-    return render(request, 'modelo.html')
-
-def modelo_view(request):
-    return render(request, 'modelo.html')
-
-def modelo_view(request):
-    return render(request, 'modelo.html')
-
-def modelo_view(request):
-    return render(request, 'modelo.html')
-
-def modelo_view(request):
-    return render(request, 'modelo.html')
-
-def modelo_view(request):
-    return render(request, 'modelo.html')
-
-def modelo_view(request):
-    return render(request, 'modelo.html')
-
-def modelo_view(request):
-    return render(request, 'modelo.html')
-
-def modelo_view(request):
-    return render(request, 'modelo.html')
-
-def modelo_view(request):
-    return render(request, 'modelo.html')
-
-def modelo_view(request):
-    return render(request, 'modelo.html')
-
-def modelo_view(request):
-    return render(request, 'modelo.html')
-
-def modelo_view(request):
-    return render(request, 'modelo.html')
-
-def modelo_view(request):
-    return render(request, 'modelo.html')
-
-def modelo_view(request):
-    return render(request, 'modelo.html')
-
-def modelo_view(request):
-    return render(request, 'modelo.html')
-
-def modelo_view(request):
-    return render(request, 'modelo.html')
-
-def modelo_view(request):
-    return render(request, 'modelo.html')
-
-def modelo_view(request):
-    return render(request, 'modelo.html')
-
-def modelo_view(request):
-    return render(request, 'modelo.html')
-
-def modelo_view(request):
-    return render(request, 'modelo.html')
-
-def modelo_view(request):
-    return render(request, 'modelo.html')
-
-def modelo_view(request):
-    return render(request, 'modelo.html')
-
-def modelo_view(request):
-    return render(request, 'modelo.html')
-
-def modelo_view(request):
-    return render(request, 'modelo.html')
 
 def modelo_view(request):
     return render(request, 'modelo.html')

@@ -5,12 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Página de Login</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
   <!-- Cabeçalho com a logo -->
   <header class="header">
-    <img src="img/futmaxANTIGO.jpg" alt="Logo Futmax" class="logo">
+    <img src="{% static 'img/futmaxANTIGO.jpg' %}" alt="Logo Futmax" class="logo">
   </header>
 
   <!-- Seção principal do login -->
@@ -18,14 +18,16 @@
     <h2>Login</h2>
     
     <!-- Formulário de login com redirecionamento -->
-    <form action="iniciar.html" method="POST">
+    <form action="{% url 'index' %}" method="POST">
+      {% csrf_token %}
       <input type="email" name="email" placeholder="E-mail" required>
       <input type="password" name="senha" placeholder="Senha" required>
       <button type="submit">Login</button>
     </form>
     
-    <p>Esqueceu sua senha? <a href="redefinir-senha.html">Recuperar senha</a></p> <!-- Link para redefinição de senha -->
-    <p>Não possui conta? <a href="cadastro.html">Cadastre-se</a></p>
+    <p>Esqueceu sua senha? <a href="{% url 'redefinir-senha' %}">Recuperar senha</a></p> <!-- Link para redefinição de senha -->
+    <p>Não possui conta? <a href="{% url 'cadastro' %}">Cadastre-se</a></p>
   </main>
 </body>
 </html>
+

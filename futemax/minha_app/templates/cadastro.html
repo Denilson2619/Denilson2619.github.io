@@ -5,12 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Página de Cadastro</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
   <!-- Cabeçalho com a logo -->
   <header class="header">
-    <img src="img/futmaxANTIGO.jpg" alt="Logo Futmax" class="logo">
+    <img src="{% static 'img/futmaxANTIGO.jpg' %}" alt="Logo Futmax" class="logo">
   </header>
 
   <!-- Seção principal de cadastro -->
@@ -18,15 +18,17 @@
     <h2>Cadastro</h2>
     
     <!-- Formulário de cadastro com redirecionamento para a página de login -->
-    <form action="index.html" method="POST">
+    <form action="{% url 'cadastro' %}" method="POST">
+      {% csrf_token %}
       <input type="text" name="nome" placeholder="Nome Completo" required>
       <input type="email" name="email" placeholder="E-mail" required>
       <input type="password" name="senha" placeholder="Senha" required>
       <input type="password" name="confirma_senha" placeholder="Confirme a Senha" required>
       <button type="submit">Cadastrar</button>
-    </form>
+   </form>
+   
     
-    <p>Já tem uma conta? <a href="index.html">Faça login</a></p>
+    <p>Já tem uma conta? <a href="{% url 'index' %}">Faça login</a></p>
   </main>
 </body>
 </html>
