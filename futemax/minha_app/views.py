@@ -175,9 +175,3 @@ def resultados_view(request):
             "campeonato_selecionado": campeonato_selecionado,
         },
     )
-
-
-
-
-def modelo_view(request):
-    return render(request, 'modelo.html')

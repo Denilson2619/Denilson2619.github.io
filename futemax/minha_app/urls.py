@@ -2,7 +2,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-
     path('', views.index_view, name='index'),  # Página de index
     path('modelo/', views.modelo_view, name='modelo'),  # Página de modelo
     path('cadastro/', views.cadastro_view, name='cadastro'),  # Página de cadastro
@@ -11,6 +10,4 @@ urlpatterns = [
     path('redefinir-senha/', views.redefinir_senha_view, name='redefinir-senha'),  # Página de redefinir senha
     path('processar-redefinicao/', views.processar_redefinicao_view, name='processar-redefinicao'),  # Página de processar redefinição
     path('resultados/', views.resultados_view, name='resultados'),  # Página de resultados
-    path('modelo/', views.modelo_view, name='modelo'),  # Página de modelo
-    
 ]
