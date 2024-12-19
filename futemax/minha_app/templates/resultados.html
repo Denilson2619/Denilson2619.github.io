@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultados</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 
 <body>
@@ -16,204 +16,50 @@
     </div>
 
     <div class="menu" id="menu">
-        <a href="iniciar.html">Jogos</a>
-        <a href="classificacao.html">Classificação</a>
+        <a href="{% url 'classificacao' %}">Classificação</a>
+        <a href="{% url 'jogos' %}">Jogos</a>
     </div>
 
     <div class="container">
-        <img src="img/futmaxANTIGO.jpg" alt="Logo Futmax" class="logo">
+        <img src="{% static 'img/futmaxANTIGO.jpg' %}" alt="Logo Futmax" class="logo">
         <div class="header">
             <h2>Resultados dos Jogos</h2>
         </div>
 
-        <select id="campeonato" onchange="mostrarResultados()">
-            <option value="">Selecione um campeonato</option>
-            <option value="brasileirao">Campeonato Brasileiro</option>
-            <option value="champions">Champions League</option>
-            <option value="epicos">Jogos Épicos</option>
-        </select>
+        <form method="get" action="{% url 'resultados' %}">
+            <select name="campeonato" id="campeonato" onchange="this.form.submit()">
+                <option value="">Selecione um campeonato</option>
+                <option value="brasileirao" {% if campeonato_selecionado == "brasileirao" %}selected{% endif %}>
+                    Campeonato Brasileiro
+                </option>
+                <option value="champions" {% if campeonato_selecionado == "champions" %}selected{% endif %}>
+                    Champions League
+                </option>
+                <option value="epicos" {% if campeonato_selecionado == "epicos" %}selected{% endif %}>
+                    Jogos Épicos
+                </option>
+            </select>
+        </form>
 
-        <div id="brasileirao" class="tabela-container" style="display: none;">
-            <h2>Campeonato Brasileiro</h2>
-            <!-- Linha 1 -->
-            <div class="linha">
-                <div class="jogo-container">
-                    <img class="escudo" src="img/logo-vasco-da-gama-1024.png" alt="Vasco">
-                    <p class="placar">0x2</p>
-                    <img class="escudo" src="img/Flamengo_braz_logo.svg.png" alt="Flamengo">
+        <div class="tabela-container">
+            {% if jogos %}
+                <h2>{{ campeonato_selecionado|title }}</h2>
+                <div class="linha">
+                    {% for jogo in jogos %}
+                        <div class="jogo-container">
+                            <img class="escudo" src="{% static jogo.escudos.0 %}" alt="{{ jogo.time1 }}">
+                            <p class="placar">{{ jogo.placar }}</p>
+                            <img class="escudo" src="{% static jogo.escudos.1 %}" alt="{{ jogo.time2 }}">
+                        </div>
+                    {% endfor %}
                 </div>
-                <div class="jogo-container">
-                    <img class="escudo" src="img/logo-sao-paulo-1024.png" alt="São Paulo">
-                    <p class="placar">2x2</p>
-                    <img class="escudo" src="img/Corinthianssccp2023.png" alt="Corinthians">
-                </div>
-                <div class="jogo-container">
-                    <img src="img/EscudoCriciumaEC.svg.png" alt="Time 5">
-                    <p class="placar">2x2</p>
-                    <img src="img/Club_Athletico_Paranaense_2019.png" alt="Time 6">
-                </div>
-                <div class="jogo-container">
-                    <img src="img/RedBullBragantino.png" alt="Time 7">
-                    <p class="placar">3x1</p>
-                    <img src="img/palmeiras.png" alt="Time 8">
-                </div>
-            </div>
-            <!-- Linha 2 -->
-            <div class="linha">
-                <div class="jogo-container">
-                    <img src="img/flumin.svg" alt="Time 9">
-                    <p class="placar">3x1</p>
-                    <img src="img/Botafogo_de_Futebol_e_Regatas_logo.svg.png" alt="Time 10">
-                </div>
-                <div class="jogo-container">
-                    <img src="img/Atlético_Goianiense.svg.png" alt="Time 11">
-                        <p class="placar">0x0</p>
-                        <img src="img/CuiabáEC2020.png" alt="Time 12">
-                </div>
-                <div class="jogo-container">
-                    <img src="img/Scinternacional1909.png" alt="Time 13">
-                    <p class="placar">3x1</p>
-                    <img src="img/logo-gremio-1024.png" alt="Time 14">
-                </div>
-                <div class="jogo-container">
-                    <img src="img/Fortaleza_EC_2018.png" alt="Time 15">
-                    <p class="placar">3x1</p>
-                    <img src="img/800px-Atletico_mineiro_galo.png" alt="Time 16">
-                </div>
-                <div class="jogo-container">
-                    <img src="img/Cruzeiro_Esporte_Clube_(logo).svg" alt="Time 17">
-                    <p class="placar">3x1</p>
-                    <img src="img/logo-bahia-1024.png" alt="Time 18">
-                </div>
-            </div>
+            {% else %}
+                <p>Selecione um campeonato para ver os resultados.</p>
+            {% endif %}
         </div>
+    </div>
 
-
-        <!-- Div para Champions League -->
-        <div id="champions" class="tabela-container" style="display: none;">
-            <h2>Champions League</h2>
-            <!-- Linha 1 -->
-            <div class="linha">
-                <div class="jogo-container">
-                    <img src="img/bayern-munchen-1024.png" alt="Time 19">
-                    <p class="placar">0x2</p>
-                    <img src="img/arsenal-football-club-1024.png" alt="Time 20">
-                </div>
-                <div class="jogo-container">
-                    <img src="img/logo-barcelona-1024.png" alt="Time 21">
-                    <p class="placar">2x2</p>
-                    <img src="img/as-monaco-1024.png" alt="Time 22">
-                </div>
-                <div class="jogo-container">
-                    <img src="img/associazione-calcio-milan-1024.png" alt="Time 23">
-                    <p class="placar">2x2</p>
-                    <img src="img/logo-real-madrid-escudo-1024.png" alt="Time 24">
-                </div>
-                <div class="jogo-container">
-                    <img src="img/logo-benfica-2.png" alt="Time 25">
-                    <p class="placar">3x1</p>
-                    <img src="img/logo-atletico-madrid-1536.png" alt="Time 26">
-                </div>
-            </div>
-            <!-- Linha 2 -->
-            <div class="linha">
-                <div class="jogo-container">
-                    <img src="img/paris-saint-germain-1024.png" alt="Time 9">
-                    <p class="placar">0x0</p>
-                    <img src="img/logo-psv-eindhoven-2.png" alt="Time 10">
-                </div>
-                <div class="jogo-container">
-                    <img src="img/liverpool-football-club-256.png" alt="Time 7">
-                    <p class="placar">3x1</p>
-                    <img src="img/bayer-04-leverkusen-256.png" alt="Time 8">
-                </div>
-                <div class="jogo-container">
-                    <img src="img/rb-leipzig-256.png" alt="Time 7">
-                    <p class="placar">3x1</p>
-                    <img src="img/juventus-football-club-256.png" alt="Time 8">
-                </div>
-                <div class="jogo-container">
-                    <img src="img/manchester-city-football-club-1024.png" alt="Time 7">
-                    <p class="placar">3x1</p>
-                    <img src="img/football-club-internazionale-milano-256.png" alt="Time 8">
-                </div>
-                <div class="jogo-container">
-                    <img src="img/logo-brugge-5.png" alt="Time 7">
-                    <p class="placar">3x1</p>
-                    <img src="img/Aston_Villa_F.C._Logo_2023.png" alt="Time 8">
-                </div>
-            </div>
-        </div>
-
-        <!-- Div para Jogos Épicos -->
-        <div id="epicos" class="tabela-container" style="display: none;">
-            <h2>Jogos Épicos</h2>
-            <!-- Linha 1 -->
-            <div class="linha">
-                <div class="jogo-container">
-                    <img src="img/logo-real-madrid-escudo-1024.png" alt="Time 1">
-                    <p class="placar">3x3</p>
-                    <img src="img/manchester-city-football-club-1024.png" alt="Time 2">
-                </div>
-                <div class="jogo-container">
-                    <img src="img/logo-barcelona-1024.png" alt="Time 3">
-                    <p class="placar">6x1</p>
-                    <img src="img/paris-saint-germain-1024.png" alt="Time 4">
-                </div>
-                <div class="jogo-container">
-                    <img src="img/logo-selecao-brasileira-brasil-novo-logo-2019-com-estrelas-e-nome-256.png"
-                        alt="Time 5">
-                    <p class="placar">(3)0x0(2)</p>
-                    <img src="img/logoitalia.png" alt="Time 6">
-                </div>
-                <div class="jogo-container">
-                    <img src="img/selecao-argentina-de-futebol-256.png" alt="Time 7">
-                    <p class="placar">(4)3x3(2)</p>
-                    <img src="img/selecao-francesa-de-futebol-256.png" alt="Time 8">
-                </div>
-            </div>
-            <!-- Linha 2 -->
-            <div class="linha">
-                <div class="jogo-container">
-                    <img src="img/Flamengo_braz_logo.svg.png" alt="Time 9">
-                    <p class="placar">5x4</p>
-                    <img src="img/logo-santos-256.png" alt="Time 10">
-                </div>
-                <div class="jogo-container">
-                    <img src="img/Corinthianssccp2023.png" alt="Time 11">
-                    <p class="placar">1x0</p>
-                    <img src="img/chelsea-football-club-256.png" alt="Time 12">
-                </div>
-                <div class="jogo-container">
-                    <img src="img/tottenham-hotspur-football-club-256.png" alt="Time 13">
-                    <p class="placar">3x2</p>
-                    <img src="img/logo-ajax-5.png" alt="Time 14">
-                </div>
-                <div class="jogo-container">
-                    <img src="img/logo-sao-paulo-1024.png" alt="Time 15">
-                    <p class="placar">1x0</p>
-                    <img src="img/liverpool-football-club-256.png" alt="Time 16">
-                </div>
-                <div class="jogo-container">
-                    <img src="img/manchester-united-football-club-4096.png" alt="Time 17">
-                    <p class="placar">3x2</p>
-                    <img src="img/associazione-calcio-milan-1024.png" alt="Time 18">
-                </div>
-            </div>
-            </header>
-
-            <div class="top-bar">
-                <div class="menu-icon" onclick="toggleMenu()">&#x22EE;</div> <!-- Três pontinhos -->
-                <div class="profile-icon" onclick="goToProfile()">👤</div>
-            </div>
-
-            <div class="menu" id="menu">
-                <a href="iniciar.html" onclick="redirecionar('resultados.html')">Jogos</a>
-                <a href="classificacao.html" onclick="redirecionar('classificacao.html')">Classificação</a>
-            </div>
-        </div>
-
-        <script src="script.js"></script>
+    <script src="{% static 'script.js' %}"></script>
 </body>
 
 </html>

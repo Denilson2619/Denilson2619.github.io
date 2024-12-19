@@ -133,4 +133,6 @@ STATIC_ROOT = BASE_DIR / "staticfiles"  # Onde os arquivos estáticos vão ser c
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+AUTH_USER_MODEL = 'minha_app.CustomUser'
+
 
