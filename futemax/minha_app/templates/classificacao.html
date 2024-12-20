@@ -15,7 +15,7 @@
 
     <div class="menu" id="menu">
         <a href="{% url 'iniciar' %}">Jogos</a>
-        <a href="resultados.html">Resultados</a>
+        <a href="{% url 'resultados' %}">Resultados</a>
     </div>
 
     <div class="container">
@@ -28,10 +28,10 @@
             <form method="get" action="{% url 'classificacao' %}">
                 <select name="campeonato" id="campeonatos">
                     <option value="">-- Selecione um campeonato --</option>
-                    <option value="brasileiro" {% if campeonato_selecionado = "brasileiro" %}selected{% endif %}>
+                    <option value="brasileiro" {% if campeonato_selecionado == "brasileiro" %}selected{% endif %}>
                         Brasileirão
                     </option>
-                    <option value="champions" {% if campeonato_selecionado = "champions" %}selected{% endif %}>
+                    <option value="champions" {% if campeonato_selecionado == "champions" %}selected{% endif %}>
                         Champions League
                     </option>
                 </select>
@@ -43,7 +43,7 @@
             {% if tabela %}
                 <img 
                     id="tabelaImagem" 
-                    src="{% static tabela.imagem %}" 
+                    src="{% static brasileiro %}" 
                     alt="{{ tabela.descricao }}" 
                     style="max-width: 100%; margin-top: 20px;">
             {% else %}

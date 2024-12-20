@@ -18,14 +18,15 @@
     <h2>Cadastro</h2>
     
     <!-- Formulário de cadastro com redirecionamento para a página de login -->
-    <form action="{% url 'cadastro' %}" method="POST">
-      {% csrf_token %}
-      <input type="text" name="nome" placeholder="Nome Completo" required>
-      <input type="email" name="email" placeholder="E-mail" required>
-      <input type="password" name="senha" placeholder="Senha" required>
-      <input type="password" name="confirma_senha" placeholder="Confirme a Senha" required>
-      <button type="submit">Cadastrar</button>
-   </form>
+   <form method="POST" action="{% url 'cadastro' %}">
+    {% csrf_token %}
+    <input type="text" name="nome" placeholder="nome">
+    <input type="text" name="email" placeholder="email" required>
+    <input type="password" name="senha" placeholder="senha">
+    <input type="password" name="confirma_senha" placeholder="confirma_Senha" required>
+    <button type="submit">Cadastrar</button>
+    
+</form>
    
     
     <p>Já tem uma conta? <a href="{% url 'index' %}">Faça login</a></p>

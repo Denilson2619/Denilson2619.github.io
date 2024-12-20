@@ -1,9 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
-class Time(models.Model):
+class username(models.Model):
     nome = models.CharField(max_length=100)
-    cidade = models.CharField(max_length=100)
+    senha = models.CharField(max_length=100)
 
     def __str__(self):
         return self.nome

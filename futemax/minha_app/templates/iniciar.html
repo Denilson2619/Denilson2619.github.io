@@ -9,19 +9,19 @@
 </head>
 <body>
 
-<div class="top-bar">
-    <div class="menu-icon" onclick="toggleMenu()">&#x22EE;</div>
-    <div class="profile-icon" onclick="goToProfile()">👤</div>
-</div>
+    <div class="top-bar">
+        <div class="menu-icon" onclick="toggleMenu()">&#x22EE;</div> <!-- Três pontinhos -->
+        <div class="profile-icon" onclick="goToProfile()">👤</div>
+    </div>
     
-<div class="menu" id="menu">
-    <a href="resultados.html" onclick="redirecionar('resultados.html')">Resultados</a>
-    <a href="classificacao.html" onclick="redirecionar('classificacao.html')">Classificação</a>
-</div>
+    <div class="menu" id="menu">
+        <a href="{% url 'classificacao' %}">Classificação</a>
+        <a href="{% url 'iniciar' %}">Jogos</a>
+    </div>
 
 <div class="container">
     <div class="header">
-        <img src="img/futmaxANTIGO.jpg" alt="Logo Futmax" class="logo">
+        <img src="{% static 'img/futmaxANTIGO.jpg' %}" alt="Logo Futmax" class="logo">
         <h2>Jogos disponíveis</h2>
     </div>
 
