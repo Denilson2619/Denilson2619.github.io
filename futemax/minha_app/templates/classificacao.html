@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Classificação dos Campeonatos</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">  <!-- Referência para o arquivo CSS -->
 </head>
 <body>
     <div class="top-bar">
@@ -19,7 +19,7 @@
     </div>
 
     <div class="container">
-        <img src="{% static 'img/futmaxANTIGO.jpg' %}" alt="Logo Futmax" class="logo">
+        <img src="{% static 'img/futmaxANTIGO.jpg' %}" alt="Logo Futmax" class="logo"> <!-- Logo -->
         <div class="header">
             <h2>Classificação dos Campeonatos</h2>
         </div>
@@ -28,12 +28,8 @@
             <form method="get" action="{% url 'classificacao' %}">
                 <select name="campeonato" id="campeonatos">
                     <option value="">-- Selecione um campeonato --</option>
-                    <option value="brasileiro" {% if campeonato_selecionado == "brasileiro" %}selected{% endif %}>
-                        Brasileirão
-                    </option>
-                    <option value="champions" {% if campeonato_selecionado == "champions" %}selected{% endif %}>
-                        Champions League
-                    </option>
+                    <option value="brasileiro" {% if campeonato_selecionado == "brasileiro" %}selected{% endif %}>Brasileirão</option>
+                    <option value="champions" {% if campeonato_selecionado == "champions" %}selected{% endif %}>Champions League</option>
                 </select>
                 <button type="submit" id="mostrarClassificacao">Ver Classificação</button>
             </form>
@@ -41,11 +37,8 @@
 
         <div class="tabela-container" id="tabelaClassificacao">
             {% if tabela %}
-                <img 
-                    id="tabelaImagem" 
-                    src="{% static brasileiro %}" 
-                    alt="{{ tabela.descricao }}" 
-                    style="max-width: 100%; margin-top: 20px;">
+                <!-- Exibe a imagem da classificação com base no campeonato selecionado -->
+                <img id="tabelaImagem" src="{% static tabela.imagem %}" alt="{{ tabela.descricao }}">
             {% else %}
                 <p>Selecione um campeonato para ver a classificação.</p>
             {% endif %}

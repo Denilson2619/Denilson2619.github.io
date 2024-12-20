@@ -405,12 +405,11 @@ p a:hover {
 
 /* Estilização do contêiner de cada jogo */
 .jogo-container {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Espaço entre o placar e as logos */
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.2); /* Fundo semi-transparente */
     border-radius: 8px;
+    text-align: center;
+    width: 100%; /* Garantir que o confronto ocupe toda a largura do seu contêiner */
 }
 
 .jogo-container:hover {
@@ -418,14 +417,30 @@ p a:hover {
 }
 
 .jogo-container img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
+    width: 40px; /* Tamanho das logos dos times */
+    height: auto;
+    margin: 0 10px;
 }
 
 .jogo-container p {
-    margin: 10px 0;
-    font-size: 16px;
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Responsividade para telas médias (tablets, por exemplo) */
+@media (max-width: 1024px) {
+    .linha-jogos {
+        grid-template-columns: repeat(2, 1fr); /* Exibe 2 confrontos por linha em telas médias */
+    }
+}
+
+/* Responsividade para telas pequenas (smartphones) */
+@media (max-width: 768px) {
+    .linha-jogos {
+        grid-template-columns: 1fr; /* Exibe 1 confronto por linha em telas pequenas */
+    }
 }
 
 /* Títulos */
@@ -595,8 +610,9 @@ select {
 
 /* Estilo para o contêiner principal que organiza os jogos em uma linha horizontal */
 .linha-jogos {
-    display: flex;
-    flex-wrap: wrap; /* Permite que os jogos quebrem linha se a tela for pequena */
-    gap: 20px; /* Espaço entre os jogos */
-    justify-content: center; /* Centraliza os jogos horizontalmente */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Exibe 4 confrontos por linha */
+    gap: 20px; /* Espaçamento entre os confrontos */
+    justify-items: center; /* Centraliza os itens dentro de cada célula */
+    margin-bottom: 20px; /* Espaçamento inferior entre as linhas */
 }

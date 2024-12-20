@@ -27,7 +27,7 @@ function toggleMenu() {
 
 // Redirecionar para perfil
 function goToProfile() {
-    window.location.href = "configuracao.html";
+    window.location.href = "{% url 'configuracao' %}";
 }
 
 // Corrigir redirecionamento do menu

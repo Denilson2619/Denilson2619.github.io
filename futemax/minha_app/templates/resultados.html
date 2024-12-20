@@ -1,14 +1,13 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultados</title>
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
-
 <body>
     <div class="top-bar">
         <div class="menu-icon" onclick="toggleMenu()">&#x22EE;</div> <!-- Três pontinhos -->
@@ -51,6 +50,9 @@
                             <p class="placar">{{ jogo.placar }}</p>
                             <img class="escudo" src="{% static jogo.escudos.1 %}" alt="{{ jogo.time2 }}">
                         </div>
+                        {% if forloop.counter|divisibleby:4 %}
+                            </div><div class="linha">  <!-- Fecha a linha a cada 4 jogos -->
+                        {% endif %}
                     {% endfor %}
                 </div>
             {% else %}
@@ -61,5 +63,4 @@
 
     <script src="{% static 'script.js' %}"></script>
 </body>
-
 </html>

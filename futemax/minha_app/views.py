@@ -5,7 +5,6 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.core.mail import send_mail
 from minha_app.models import CustomUser
-from django.shortcuts import render
 from django.http import HttpResponse
 
 
@@ -13,7 +12,7 @@ from django.http import HttpResponse
 
 
 
-def index_view(request):
+def index(request):
     if request.method == "POST":
         email = request.POST.get("email")
         senha = request.POST.get("senha")
@@ -84,31 +83,48 @@ def classificacao_view(request):
         {"tabela": tabela, "campeonato_selecionado": campeonato_selecionado},
     )
 
+from django.shortcuts import render
 
 def iniciar_view(request):
-    # Dados simulados para exibição dinâmica
     jogos = {
-        "Brasileirao": [
-            {"imagem": "img/FLAvsVAS.png", "link": "melhores_momentos_flaxvas.html", "descricao": "Flamengo x Vasco"},
-            {"imagem": "img/SÃOvsCOR.png", "link": "melhores_momentos_saoxcor.html", "descricao": "São Paulo x Corinthians"},
-            {"imagem": "img/CRIvsCAP.png", "link": "melhores_momentos_crixcap.html", "descricao": "Criciúma x CAP"},
-            {"imagem": "img/RBBvsPLA.png", "link": "melhores_momentos_rbbvspla.html", "descricao": "Red Bull Bragantino x Palmeiras"},
-            {"imagem": "img/botxflu.png", "link": "melhores_momentos_botxflu.html", "descricao": "Botafogo x Fluminense"},
+        'Brasileirão': [
+            {'link': 'melhores_momentos_flaxvas.html', 'imagem': 'img/FLAvsVAS.png', 'descricao': 'Flamengo x Vasco'},
+            {'link': 'melhores_momentos_saoxcor.html', 'imagem': 'img/SÃOvsCOR.png', 'descricao': 'São Paulo x Corinthians'},
+            {'link': 'melhores_momentos_crixcap.html', 'imagem': 'img/CRIvsCAP.png', 'descricao': 'Criciúma x CAP'},
+            {'link': 'melhores_momentos_rbbvspla.html', 'imagem': 'img/RBBvsPLA.png', 'descricao': 'Red Bull Bragantino x Palmeiras'},
+            {'link': 'melhores_momentos_botxflu.html', 'imagem': 'img/botxflu.png', 'descricao': 'Botafogo x Fluminense'},
+            {'link': 'melhores_momentos_cuixatl.html', 'imagem': 'img/cuixatlgo.png', 'descricao': 'Cuiabá x Atlético-GO'},
+            {'link': 'melhores_momentos_grexint.html', 'imagem': 'img/greXint.png', 'descricao': 'Grêmio x Internacional'},
+            {'link': 'melhores_momentos_forxatl.html', 'imagem': 'img/forxatl.png', 'descricao': 'Fortaleza x Atlético Mineiro'},
+            {'link': 'melhores_momentos_cruxbah.html', 'imagem': 'img/cruXbah.png', 'descricao': 'Cruzeiro x Bahia'},
         ],
-        "Epicos": [
-            {"imagem": "img/cityxreal.png", "link": "melhores_momentos_cityxreal.html", "descricao": "Manchester City x Real Madrid"},
-            {"imagem": "img/barcaxpsg.png", "link": "melhores_momentos_barcaxpsg.html", "descricao": "Barcelona x PSG"},
-            {"imagem": "img/braxita.png", "link": "melhores_momentos_braxita.html", "descricao": "Brasil x Itália"},
-            {"imagem": "img/argxfra.png", "link": "melhores_momentos_argxfra.html", "descricao": "Argentina x França"},
+        'Épicos': [
+            {'link': 'melhores_momentos_cityxreal.html', 'imagem': 'img/cityxreal.png', 'descricao': 'Manchester City x Real Madrid'},
+            {'link': 'melhores_momentos_barcaxpsg.html', 'imagem': 'img/barcaxpsg.png', 'descricao': 'Barcelona x PSG'},
+            {'link': 'melhores_momentos_braxita.html', 'imagem': 'img/braxita.png', 'descricao': 'Brasil x Itália'},
+            {'link': 'melhores_momentos_argxfra.html', 'imagem': 'img/argxfra.png', 'descricao': 'Argentina x França'},
+            {'link': 'melhores_momentos_flaxsan.html', 'imagem': 'img/flaaxsann.PNG', 'descricao': 'Flamengo x Santos'},
+            {'link': 'melhores_momentos_chexcor.html', 'imagem': 'img/chelseaXcorinthians.png', 'descricao': 'Chelsea x Corinthians'},
+            {'link': 'melhores_momentos_tottexajax.html', 'imagem': 'img/totxajax.PNG', 'descricao': 'Ajax x Tottenham'},
+            {'link': 'melhores_momentos_saopxliv.html', 'imagem': 'img/saopXliv.PNG', 'descricao': 'Liverpool x São Paulo'},
+            {'link': 'melhores_momentos_milanxunited.html', 'imagem': 'img/uniteddxmilan.png', 'descricao': 'Manchester United x Milan'},
         ],
-        "ChampionsLeague": [
-            {"imagem": "img/bayerXarsenal.png", "link": "melhores_momentos_bayerxarsenal.html", "descricao": "Bayer Munique x Arsenal"},
-            {"imagem": "img/barçaXmonaco.png", "link": "melhores_momentos_barcaxmonaco.html", "descricao": "Barcelona x Monaco"},
-            {"imagem": "img/realXmilan.png", "link": "melhores_momentos_realxmilan.html", "descricao": "Real Madrid x Milan"},
-        ],
+        'Champions League': [
+            {'link': 'melhores_momentos_bayerxarsenal.html', 'imagem': 'img/bayerXarsenal.png', 'descricao': 'Bayer Munique x Arsenal'},
+            {'link': 'melhores_momentos_barcaxmonaco.html', 'imagem': 'img/barçaXmonaco.png', 'descricao': 'Barcelona x Monaco'},
+            {'link': 'melhores_momentos_realxmilan.html', 'imagem': 'img/realXmilan.png', 'descricao': 'Real Madrid x Milan'},
+            {'link': 'melhores_momentos_benficaxatletico.html', 'imagem': 'img/benficaXatletico.png', 'descricao': 'Benfica x Atletico'},
+            {'link': 'melhores_momentos_psgxpsv.html', 'imagem': 'img/psgXpsv.png', 'descricao': 'PSG x PSV'},
+            {'link': 'melhores_momentos_livxbay.html', 'imagem': 'img/livxbay.png', 'descricao': 'Liverpool x Bayer Leverkusen'},
+            {'link': 'melhores_momentos_rbxjuve.html', 'imagem': 'img/rbXjuve.png', 'descricao': 'RB Leipzig x Juventus'},
+            {'link': 'melhores_momentos_cityxinter.html', 'imagem': 'img/cityXinter.png', 'descricao': 'Manchester City x Inter'},
+            {'link': 'melhores_momentos_bruggexaston.html', 'imagem': 'img/bruggexaston.png', 'descricao': 'Club Brugge x Aston Villa'},
+        ]
     }
 
-    return render(request, "iniciar.html", {"jogos": jogos})
+    return render(request, 'iniciar.html', {'jogos': jogos})
+
+
 
 
 
@@ -194,3 +210,22 @@ def resultados_view(request):
         },
     )
 
+def classificacao(request):
+    campeonato_selecionado = request.GET.get('campeonato', '')
+    tabela = None
+
+    if campeonato_selecionado == 'brasileiro':
+        tabela = {
+            'imagem': 'img/brasileiro.png',  # Caminho para a imagem do Brasileirão
+            'descricao': 'Classificação do Campeonato Brasileiro'
+        }
+    elif campeonato_selecionado == 'champions':
+        tabela = {
+            'imagem': 'img/champions.png',  # Caminho para a imagem da Champions League
+            'descricao': 'Classificação da Champions League'
+        }
+
+    return render(request, 'classificacao.html', {'tabela': tabela, 'campeonato_selecionado': campeonato_selecionado})
+
+def configuracao_view(request):
+    return render(request, 'configuracao.html')

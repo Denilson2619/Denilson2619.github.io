@@ -9,15 +9,15 @@
 </head>
 <body>
 
-    <div class="top-bar">
-        <div class="menu-icon" onclick="toggleMenu()">&#x22EE;</div> <!-- Três pontinhos -->
-        <div class="profile-icon" onclick="goToProfile()">👤</div>
-    </div>
+<div class="top-bar">
+    <div class="menu-icon" onclick="toggleMenu()">&#x22EE;</div> <!-- Três pontinhos -->
+    <div class="profile-icon"><a href="{% url 'configuracao' %}">👤</a></div>
+</div>
     
-    <div class="menu" id="menu">
-        <a href="{% url 'classificacao' %}">Classificação</a>
-        <a href="{% url 'iniciar' %}">Jogos</a>
-    </div>
+<div class="menu" id="menu">
+    <a href="{% url 'resultados' %}">Resultados</a>
+    <a href="{% url 'classificacao' %}">Classificação</a>
+</div>
 
 <div class="container">
     <div class="header">
@@ -33,7 +33,7 @@
                 {% for jogo in lista_jogos %}
                     <div class="jogo">
                         <a href="{{ jogo.link }}">
-                            <img src="{{ jogo.imagem }}" alt="{{ jogo.descricao }}">
+                            <img src="{% static jogo.imagem %}" alt="{{ jogo.descricao }}">
                         </a>
                     </div>
                 {% endfor %}
@@ -43,6 +43,6 @@
     {% endfor %}
 </div>
 
-<script src="script.js"></script>
+<script src="{% static 'script.js' %}"></script>
 </body>
 </html>
